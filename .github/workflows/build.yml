@@ -4,8 +4,6 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-        CI: false
 
     steps:
     - uses: actions/checkout@v2
@@ -26,6 +24,17 @@ jobs:
       with:
         name: build
         path: build/
+
+    - name: Send Telegram Notification
+      if: failure()
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_ALEX_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        message: |
+            🚨 Сборка провалена!
+            Пожалуйста, проверьте логи сборки в репозитории.
+            Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
   deploy:
     needs: build
