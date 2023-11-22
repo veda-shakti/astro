@@ -10,7 +10,7 @@ const ContentFullWidth = (props) => {
                 <div className="contentblock">
             <div className="frame8_block">
                 <div className="frame8_block_row1">
-                    <img src={props.photo} alt="photo Nasti Shackti" className="frame8_block_img"/>
+                    <img src={props.photo} alt="Nasti Shackti" className="frame8_block_img"/>
                         <div className="frame8_block_about">
                             <h1 className="frame8_block_h1">Анастасия Шакти</h1>
                             <p className="frame8_block_row1_p">
