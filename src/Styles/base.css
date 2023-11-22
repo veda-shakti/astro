@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/futura-pt_bold.woff') format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/futura-pt_book.woff') format('woff');
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(289deg, #01160F 2.69%, #326A4C 51.61%, #01160F 100%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.hide {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+

@@ -1,0 +1,229 @@
+.content.PhoneBorderInfo {
+  margin: 0 120px;
+  position: absolute;
+  left:55px;
+  .frame5_block {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    color: #FBD77D;
+    .frame5_block_h4 {
+      text-align: center;
+      font-family: 'Futura PT', sans-serif;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 110%; /* 38.088px */
+      margin: 0;
+      margin-top: 56px;
+      margin-bottom: 50px;
+    }
+    .frame5_block_list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 816px;
+      margin: auto;
+      margin-top: 0;
+      justify-content: space-between;
+    }
+    .border {
+      background-image: url(../assets/gold-frame-border.svg);
+      width:400px ;
+      height: 120px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .frame5_block_h5 {
+      color: #FBD77D;
+      text-align: center;
+      font-family: 'Futura PT', sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%; /* 26.4px */
+      position: relative;
+      width: 350px;
+      padding: 12.5px 40px;
+      margin: 0;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 393px;
+        height: 116px;
+        border-radius: 18px;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      &::before {
+        width: 393px;
+        height: 116px;
+
+        z-index: -2;
+        border-radius: 25px;
+
+      }
+    }
+  }
+}
+@media (min-width: 960px) and (max-width: 1299px) {
+  .content.PhoneBorderInfo {
+    margin: 70px 0 0 35px;
+    position: absolute;
+    .frame5_block {
+      .frame5_block_h4 {
+        font-size: 36px;
+        font-style: normal;
+        margin-bottom: 20px;
+      }
+      .frame5_block_list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 730px;
+        margin: auto;
+        margin-top: 0;
+        justify-content: space-between;
+      }
+      .border {
+        background-image: url(../assets/gold-frame-border-notebook.svg);
+        width:355px ;
+        height: 115px;
+        margin-bottom: 20px;
+
+      }
+      .frame5_block_h5 {
+        color: #FBD77D;
+        font-size: 20px;
+        line-height: 110%;
+        width: 280px;
+        height: auto;
+        padding: 0px 37px;
+        &::after {
+          width: 280px;
+          height: 90px;
+        }
+        &::before {
+          width: 280px;
+          height: 90px;
+          border-radius: 25px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 520px) and (max-width: 959px) {
+  .content.PhoneBorderInfo {
+    margin: 100px 0px;
+    position: absolute;
+    left:50px;
+    .frame5_block {
+
+      .frame5_block_h4 {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%; /* 38.088px */
+        margin: 0;
+        margin-bottom: 30px;
+      }
+      .frame5_block_list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 355px;
+        margin: auto;
+        margin-top: 0;
+        justify-content: space-between;
+      }
+      .border {
+        background-image: url(../assets/gold-frame-border-notebook.svg);
+        width:355px ;
+        height: 115px;
+        margin-bottom: 20px;
+
+      }
+      .frame5_block_h5 {
+        color: #FBD77D;
+        font-size: 20px;
+        line-height: 110%; /* 26.4px */
+        width: 280px;
+        height: auto;
+        padding: 0px 35px;
+        &::after {
+          width: 280px;
+          height: 90px;
+        }
+        &::before {
+          width: 280px;
+          height: 90px;
+          border-radius: 25px;
+
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 559px) {
+  .content.PhoneBorderInfo {
+    margin: 0px;
+    position: absolute;
+    left:25px;
+    .frame5_block {
+      .frame5_block_h4 {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%; /* 38.088px */
+        margin: 0;
+        margin-bottom: 20px;
+      }
+      .frame5_block_list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 240px;
+        margin: auto;
+        margin-top: 0;
+        justify-content: space-between;
+      }
+      .border {
+        background-image: url(../assets/gold-frame-border-phone.svg);
+        width:240px ;
+        height: 90px;
+        margin-bottom: 20px;
+
+      }
+      .frame5_block_h5 {
+        color: #FBD77D;
+        font-size: 16px;
+        line-height: 110%; /* 26.4px */
+        width: 210px;
+        height: auto;
+        padding: 0px 15px;
+        &::after {
+          width: 240px;
+          height: 90px;
+        }
+        &::before {
+          width: 240px;
+          height: 90px;
+          border-radius: 25px;
+
+        }
+      }
+    }
+  }
+}

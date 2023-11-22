@@ -1,0 +1,172 @@
+.content.PhoneMainInfo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  .content.PhoneMainInfo .frame3_block {
+    opacity: 1;
+    width: 982px;
+    height: 250px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .content.PhoneMainInfo .frame3_block_h4 {
+    font-family: 'Futura PT', sans-serif;
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    /* 44px */ }
+  .content.PhoneMainInfo .frame3_block_h2 {
+    font-family: 'Futura PT', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 70.4px;
+    position: relative;
+    margin: 0 0 20px 0; }
+  .content.PhoneMainInfo .frame3_block_p {
+    font-family: 'Futura PT', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36.8px;
+    height: auto;
+    position: relative;
+    margin: 0;
+    width: 915px; }
+    .content.PhoneMainInfo .frame3_block_p span {
+      font-size: 24px;
+      line-height: 27.6px; }
+  .content.PhoneMainInfo .frame3_block_h3 {
+    font-family: 'Futura PT', sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38.1px;
+    height: 58px;
+    position: relative;
+    margin: 0; }
+
+@media (min-width: 960px) and (max-width: 1300px) {
+  .content.PhoneMainInfo .frame3_block {
+    width: 730px;
+    height: 200px;
+    margin: auto 85px; }
+  .content.PhoneMainInfo .frame3_block_h4 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 110%;
+    /* 44px */ }
+  .content.PhoneMainInfo .frame3_block_h2 {
+    font-size: 36px;
+    font-style: normal;
+    line-height: 110%;
+    margin: 0 0 20px 0; }
+  .content.PhoneMainInfo .frame3_block_p {
+    font-size: 24px;
+    line-height: 110%;
+    height: auto;
+    margin: 0;
+    width: 720px; }
+    .content.PhoneMainInfo .frame3_block_p span {
+      font-size: 20px;
+      line-height: 110%; }
+  .content.PhoneMainInfo .frame3_block_h3 {
+    font-family: 'Futura PT', sans-serif;
+    font-size: 36px;
+    line-height: 110%;
+    height: 40px;
+    margin-bottom: 20px; } }
+@media (min-width: 560px) and (max-width: 959px) {
+  .content.PhoneMainInfo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+    .content.PhoneMainInfo .frame3_block {
+      width: 460px;
+      height: 555px; }
+    .content.PhoneMainInfo .frame3_block_h4 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 110%;
+      /* 44px */
+      width: 460px; }
+    .content.PhoneMainInfo .frame3_block_h2 {
+      font-size: 36px;
+      font-style: normal;
+      line-height: 110%;
+      margin: 0 0 20px 0; }
+    .content.PhoneMainInfo .frame3_block_p {
+      font-family: 'Futura PT', sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%;
+      height: auto;
+      margin: 0;
+      width: 460px; }
+      .content.PhoneMainInfo .frame3_block_p span {
+        font-size: 24px;
+        line-height: 110%; }
+    .content.PhoneMainInfo .frame3_block_h3 {
+      font-family: 'Futura PT', sans-serif;
+      font-size: 36px;
+      line-height: 110%;
+      height: 80px;
+      margin-bottom: 20px; } }
+@media (min-width: 320px) and (max-width: 559px) {
+  .content.PhoneMainInfo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+    .content.PhoneMainInfo .frame3_block {
+      width: 240px;
+      height: 555px;
+      align-items: center; }
+    .content.PhoneMainInfo .frame3_block_h4 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 110%;
+      /* 44px */
+      width: 240px; }
+    .content.PhoneMainInfo .frame3_block_h2 {
+      font-size: 24px;
+      font-style: normal;
+      line-height: 110%;
+      margin: 0 0 10px 0;
+      text-align: center; }
+    .content.PhoneMainInfo .frame3_block_p {
+      font-family: 'Futura PT', sans-serif;
+      text-align: center;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%;
+      height: auto;
+      margin: 0;
+      width: 240px; }
+      .content.PhoneMainInfo .frame3_block_p span {
+        font-size: 18px;
+        line-height: 110%; }
+    .content.PhoneMainInfo .frame3_block_h3 {
+      font-family: 'Futura PT', sans-serif;
+      font-size: 24px;
+      line-height: 110%;
+      height: 58px;
+      text-align: center;
+      margin-bottom: 10px; } }
+
+/*# sourceMappingURL=Frame3.css.map */
