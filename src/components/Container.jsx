@@ -1,6 +1,5 @@
 import React from 'react';
 import '../Styles/container.css'
-import * as Frames from "./Frames/frames";
 const Container = (props) => {
         return (
                 <div className="container phone" id={`frame${props.containerid}`}>

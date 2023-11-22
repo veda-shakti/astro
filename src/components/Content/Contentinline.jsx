@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import '../../Styles/ContentPhoneBorderInfo.css'
 import '../../Styles/content.css'
 import '../../Styles/ContentInline.css'

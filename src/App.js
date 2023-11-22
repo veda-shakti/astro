@@ -24,7 +24,6 @@ function App() {
             const touchEndY = e.changedTouches[0].clientY;
             const touchEndX = e.changedTouches[0].clientX;
             const yDiff = this.touchStartY - touchEndY;
-            const xDiff = this.touchStartX - touchEndX;
                 if (yDiff > 0) {
                     /* свайп вверх */
                     handleScroll('up');
@@ -137,8 +136,8 @@ function App() {
             const isPhone1 = index >= 1;
             const isPhone2 = index > 7 ;
             const isMoney = index >= 5 && index < 7;
-            const isFullWidth = index == 7;
-            const lastframe = index == 11;
+            const isFullWidth = index === 7;
+            const lastframe = index === 11;
 
 
             if (isCosmos1) {

@@ -1,6 +1,5 @@
 import React from 'react';
 import '../Styles/container.css'
-import ContentIntro from "./Content/ContentIntro.jsx";
 const ContainerIntro = (props) => {
         return (
 
