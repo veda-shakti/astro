@@ -33,7 +33,18 @@ jobs:
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
             🚨 Сборка провалена!
-            Пожалуйста, проверьте логи сборки в репозитории.
+            @AlexUner, @Ivanandreevichgud, пожалуйста, проверьте логи сборки в репозитории.
+            Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+    - name: Send Telegram Notification on Success
+      if: success()
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_CHAT_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        message: |
+            ✅ Сборка успешно завершена!
+            @AlexUner, @Ivanandreevichgud, пожалуйста, проверьте работоспособность сайта.
             Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
   deploy:
