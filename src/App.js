@@ -22,7 +22,6 @@ function App() {
         function handleTouchMove(e) {
             // Вычисление направления свайпа
             const touchEndY = e.changedTouches[0].clientY;
-            const touchEndX = e.changedTouches[0].clientX;
             const yDiff = this.touchStartY - touchEndY;
                 if (yDiff > 0) {
                     /* свайп вверх */
@@ -48,14 +47,14 @@ function App() {
             var container = currentFrame.parentElement.parentElement;
 
 
-            if ((scroll.scrollHeight >= container.offsetHeight && block.offsetHeight > 500) && (container.offsetHeight != 0)) {
+            if ((scroll.scrollHeight >= container.offsetHeight && block.offsetHeight > 500) && (container.offsetHeight !== 0)) {
                 if (animating)
                     return;
 
                 if (
-                    (direction === 'up' && ((scroll.scrollTop+20) >= (block.offsetHeight - container.offsetHeight))
+                    (direction === 'up' && (scroll.scrollTop+20 >= block.offsetHeight - container.offsetHeight))
                     ||
-                    (direction === 'down' && scroll.scrollTop === 0))
+                    (direction === 'down' && scroll.scrollTop === 0)
                 ) {
                     if (!shouldswitch){
                         setTimeout(() => {
@@ -74,9 +73,9 @@ function App() {
                         return;
 
                     if (
-                        (direction === 'up' && ((scroll.scrollLeft) >= (block.offsetWidth - container.offsetWidth))
-                            ||
-                            (direction === 'down' && scroll.scrollLeft === 0))
+                        (direction === 'up' && (scroll.scrollLeft >= block.offsetWidth - container.offsetWidth))
+                        ||
+                        (direction === 'down' && scroll.scrollLeft === 0)
                     )
                     {
                         if (!shouldswitch){
