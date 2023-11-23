@@ -13,25 +13,29 @@ const Contentinline = (props) => {
         const postcontainer2 = mainFrame.parentElement.parentElement.parentElement.querySelector(".postcontainer");
 
         function handleHorizontalScroll(e) {
-            let scrollAmount = 0;
-            const slideTimer = setInterval(function(){
-                scroll.scrollLeft += e.deltaY / 25;
-                scrollAmount += 10;
-                if(scrollAmount >= 100){
-                    window.clearInterval(slideTimer);
+            if (window.innerWidth < 320 || window.innerWidth > 960) {
+                if (!props.animating && props.currentframe.id === "content9") {
+                    let scrollAmount = 0;
+                    const slideTimer = setInterval(function(){
+                        scroll.scrollLeft += e.deltaY / 10;
+                        scrollAmount += 20;
+                        if(scrollAmount >= 100){
+                            window.clearInterval(slideTimer);
+                        }
+                    }, 25);
                 }
-            }, 25);
+            }
         }
 
         // Проверка ширины окна
         if (window.innerWidth < 320 || window.innerWidth > 960) {
-            postcontainer2.addEventListener('wheel', handleHorizontalScroll);
+            document.addEventListener('wheel', handleHorizontalScroll);
         }
 
         return () => {
-            postcontainer2.removeEventListener('wheel', handleHorizontalScroll);
+            document.removeEventListener('wheel', handleHorizontalScroll);
         };
-    }, [props.contentid]);
+    }, [props.contentid, props.animating, props.currentframe]);
 
 
     return (

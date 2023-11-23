@@ -1,17 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Container from "../Container";
 import ContentFeedBack from "../Content/ContentFeedBack";
 import Contentinline from "../Content/Contentinline";
 import ContentBlockVebinar from "../Content/ContentBlockVebinar";
 import ContentLastBlock from "../Content/ContentLastBlock";
 
-export const Frame4 = () => {
+export const Frame4 = (props) => {
+    useEffect(() => {
+        }, [props.animating, props.currentframe]
+    )
     return (
         <Container
             containerid="4">
 
             <Contentinline
                 contentid="9"
+                animating = {props.animating}
+                currentframe = {props.currentframe}
                 />
 
             <ContentBlockVebinar

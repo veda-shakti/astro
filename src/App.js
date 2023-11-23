@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import * as Frames from "./components/Frames/frames";
 import BackgroundBox from "./components/background-box";
-
+import Contentinline from './components/Content/Contentinline';
 
 function App() {
     const [currentFrame, setCurrentFrame] = useState(null);
@@ -16,7 +16,6 @@ function App() {
         function handleTouchStart(e) {
             // Сохранение начальной точки касания
             this.touchStartY = e.touches[0].clientY;
-            this.touchStartX = e.touches[0].clientX;
         }
 
         function handleTouchMove(e) {
@@ -31,10 +30,11 @@ function App() {
                     handleScroll('down');
                 }
             // Предотвращение дальнейшего распространения события по умолчанию
-            e.preventDefault();
+            // e.preventDefault();
         }
 
         function scrollwheel(e) {
+            // e.preventDefault();
             const direction = e.deltaY > 0 ? 'up' : 'down';
             handleScroll(direction);
         }
@@ -42,14 +42,35 @@ function App() {
             // Определение направления прокрутки
 
 
-            var scroll = currentFrame.querySelector('.scrolldiv');
-            var block = currentFrame.querySelector('.contentblock');
-            var container = currentFrame.parentElement.parentElement;
+            const scroll = currentFrame.querySelector('.scrolldiv');
+            const block = currentFrame.querySelector('.contentblock');
+            const container = currentFrame.parentElement.parentElement;
 
 
             if ((scroll.scrollHeight >= container.offsetHeight && block.offsetHeight > 500) && (container.offsetHeight !== 0)) {
                 if (animating)
                     return;
+                if (window.innerWidth < 320 || window.innerWidth > 960) {
+                    if (direction === 'up') {
+                        let scrollAmount = 0;
+                        const slideTimer = setInterval(function(){
+                            scroll.scrollTop +=  10;
+                            scrollAmount += 20;
+                            if(scrollAmount >= 100){
+                                window.clearInterval(slideTimer);
+                            }
+                        }, 25);
+                    } else {
+                        let scrollAmount = 0;
+                        const slideTimer = setInterval(function(){
+                            scroll.scrollTop -=  10;
+                            scrollAmount += 20;
+                            if(scrollAmount >= 100){
+                                window.clearInterval(slideTimer);
+                            }
+                        }, 25);
+                    }
+                }
 
                 if (
                     (direction === 'up' && (scroll.scrollTop+20 >= block.offsetHeight - container.offsetHeight))
@@ -239,7 +260,9 @@ function App() {
                 <Frames.Frame1/>
                 <Frames.Frame2/>
                 <Frames.Frame3/>
-                <Frames.Frame4/>
+                <Frames.Frame4
+                    animating={animating}
+                    currentframe = {currentFrame}/>
 
             </BackgroundBox>
         </div>

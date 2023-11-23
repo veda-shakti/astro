@@ -11,7 +11,7 @@
     position: absolute;
 }
 .scrolldiv {
-    overflow-y: auto;
+    overflow-y: hidden;
     height: 530px;
     position: absolute;
     scrollbar-width: none; /* Firefox */
@@ -191,7 +191,7 @@
         display: flex;
     }
     .scrolldiv {
-        overflow-y: auto;
+        overflow-y: hidden;
         height: 340px;
         position: absolute;
         scrollbar-width: none; /* Firefox */
@@ -296,6 +296,7 @@
     }
     .scrolldiv{
         height: 600px;
+        overflow-y: auto;
     }
     .content.introphone .frame2_block .frame2_block_time {
         font-size: 24px;
@@ -385,6 +386,9 @@
         width: 100px;
         height: 100px;
         left: 67px;
+    }
+    .scrolldiv{
+        overflow-y: auto;
     }
     .content.introphone .frame2_block {
         /* width: ; */
