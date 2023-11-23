@@ -66,8 +66,8 @@ jobs:
         set ssl:verify-certificate no;
         set sftp:auto-confirm yes;
         set net:socket-buffer 524288;
-        open sftp://devilaks_veda_ftp@devilaks.ftp.tools;
-        user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }};
+        open sftp://devilaks@devilaks.ftp.tools;
+        user ${{ secrets.SFTP_USERNAME }} ${{ secrets.SFTP_PASSWORD }};
         lcd ./build;
         mirror --reverse --delete --verbose --parallel=10 . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/test;
         bye;
