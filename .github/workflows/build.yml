@@ -69,7 +69,8 @@ jobs:
         user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }};
         lcd ./build;
         mirror --reverse --delete --verbose --parallel=10 . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/test;
-        by
+        bye;
+        "
 
     - name: Send Telegram Notification on Deploy Success
       if: success()
