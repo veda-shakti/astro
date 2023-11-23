@@ -69,11 +69,10 @@ jobs:
         open sftp://devilaks@devilaks.ftp.tools;
         user ${{ secrets.SFTP_USERNAME }} ${{ secrets.SFTP_PASSWORD }};
         lcd ./build;
+
+        mirror --reverse --delete --verbose --parallel=10 . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro;   
         
         chmod -R 755 /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro;
-        chmod -R 755 /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz;
-
-        mirror --reverse --delete --verbose --parallel=10 . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro;        
         
         mv /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro/* /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/;
         rm -r /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro/;
