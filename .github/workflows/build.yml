@@ -58,8 +58,16 @@ jobs:
       with:
         name: build
 
+    - name: Set up SSH key
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan 185.104.45.100 >> ~/.ssh/known_hosts
+        chmod 644 ~/.ssh/known_hosts
+
     - name: Copy files to server
-      run: scp -r ./build/* devilaks@hosting:/home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/test
+      run: scp -r ./build/* devilaks@185.104.45.100:/home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/test
 
     - name: Send Telegram Notification on Deploy Success
       if: success()
