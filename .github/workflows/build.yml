@@ -75,6 +75,9 @@ jobs:
         bye;
         "
 
+    - name: Clear MODX Cache
+      run: curl https://godovoy-astroprognoz.anastasiyashakti.com/clear-cache-script.php?key=${{ secrets.YOUR_SECRET_KEY }}
+
     - name: Send Telegram Notification on Deploy Success
       if: failure()
       uses: appleboy/telegram-action@master
