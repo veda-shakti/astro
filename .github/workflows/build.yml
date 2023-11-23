@@ -19,12 +19,6 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Archive production artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: build
-        path: build/
-
     - name: Send Telegram Notification on Failure build
       if: failure()
       uses: appleboy/telegram-action@master
@@ -53,13 +47,18 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Download build artifacts
-      uses: actions/download-artifact@v2
-      with:
-        name: build
+    - name: Install lftp
+      run: sudo apt-get install lftp
 
-    - name: Copy files to server
-      run: scp -r ./build/* devilaks@185.104.45.100:/home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/test
+    - name: FTP Deploy
+      run: |
+        lftp -e "
+        set ssl:verify-certificate no;
+        open ftp://devilaks_veda_ftp@devilaks.ftp.tools;
+        user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }};
+        mirror --reverse --delete --verbose ./build /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/test;
+        bye;
+        "
 
     - name: Send Telegram Notification on Deploy Success
       if: success()
