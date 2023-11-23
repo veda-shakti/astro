@@ -19,6 +19,12 @@ jobs:
     - name: Build
       run: npm run build
 
+    - name: List directory contents
+      run: ls -la
+
+    - name: List build directory
+      run: ls -la ./build
+
     - name: Send Telegram Notification on Failure build
       if: failure()
       uses: appleboy/telegram-action@master
