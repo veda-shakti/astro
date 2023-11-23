@@ -32,7 +32,7 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
-          🚨 Сборка провалена!
+          🚨 1/2. Сборка провалена!
           Пожалуйста, проверьте логи сборки в репозитории.
           Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
@@ -43,7 +43,7 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
-          ✅ Сборка успешно завершена!
+          ✅ 1/2. Сборка успешно завершена!
           Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
   deploy:
@@ -70,7 +70,7 @@ jobs:
         user ${{ secrets.SFTP_USERNAME }} ${{ secrets.SFTP_PASSWORD }};
         lcd ./build;
         mirror --reverse --delete --verbose --parallel=10 . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro;
-        mv -v /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro/static /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/static;
+        rsync -av --remove-source-files /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro/static/ /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/static/
         bye;
         "
     - name: Send Telegram Notification on Deploy Success
@@ -80,7 +80,7 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
-          🚨 Развёртывание не удалось!
+          🚨 2/2. Развёртывание не удалось!
           Пожалуйста, проверьте логи сборки в репозитории.
           Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
@@ -91,5 +91,5 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
-          🚀 Развёртывание успешно завершено!
+          🚀 2/2. Развёртывание успешно завершено!
           Проверьте сайт: https://anastasiyashakti.com
