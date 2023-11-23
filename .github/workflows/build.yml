@@ -70,7 +70,7 @@ jobs:
         user ${{ secrets.SFTP_USERNAME }} ${{ secrets.SFTP_PASSWORD }};
         lcd ./build;
         mirror --reverse --delete --verbose --parallel=10 . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro;
-        mv /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro/static /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/;
+        mv /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro/static /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz;
         bye;
         "
 
