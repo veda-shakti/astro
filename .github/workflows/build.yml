@@ -64,12 +64,12 @@ jobs:
       run: |
         lftp -e "
         set ssl:verify-certificate no;
+        set net:socket-buffer 524288;
         open ftp://devilaks_veda_ftp@devilaks.ftp.tools;
         user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }};
-        lcd ./build; # Установка локальной директории в build
-        mirror --reverse --delete --verbose . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/test;
-        bye;
-        "
+        lcd ./build;
+        mirror --reverse --delete --verbose --parallel=10 . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/test;
+        by
 
     - name: Send Telegram Notification on Deploy Success
       if: success()
