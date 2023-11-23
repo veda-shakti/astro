@@ -70,9 +70,19 @@ jobs:
         user ${{ secrets.SFTP_USERNAME }} ${{ secrets.SFTP_PASSWORD }};
         lcd ./build;
         mirror --reverse --delete --verbose --parallel=10 . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro;
-        mv /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/build/static /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/static;
+        mv /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro/static /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/static;
         bye;
         "
+    - name: Send Telegram Notification on Deploy Success
+      if: failure()
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_CHAT_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        message: |
+          🚨 Развёртывание не удалось!
+          Пожалуйста, проверьте логи сборки в репозитории.
+          Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
     - name: Send Telegram Notification on Deploy Success
       if: success()
