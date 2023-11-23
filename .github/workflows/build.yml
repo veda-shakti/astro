@@ -70,7 +70,8 @@ jobs:
         user ${{ secrets.SFTP_USERNAME }} ${{ secrets.SFTP_PASSWORD }};
         lcd ./build;
         mirror --reverse --delete --verbose --parallel=10 . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro;
-        rsync -av --remove-source-files /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro/static/ /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/static/
+        cp -r /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro/static /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/;
+        rm -r /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro/static;
         bye;
         "
     - name: Send Telegram Notification on Deploy Success
