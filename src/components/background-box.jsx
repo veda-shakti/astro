@@ -8,7 +8,7 @@ const BackgroundBox = (props) => {
 
             <footer id="footer">
                 <div className="column">
-                    <a href="../assets/ofert_doc_ua.pdf">Договор-оферты</a>
+                    <a href="./src/assets/ofert_doc_ua.pdf">Договор-оферты</a>
                 </div>
                 <div className="column column2">
                     <a href="https://www.instagram.com/p/CWn2xYYscg_/">@ANASTASIASHAKTI</a>
