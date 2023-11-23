@@ -57,15 +57,16 @@ jobs:
       with:
         name: build
 
-    - name: Install lftp
+    - name: Install lftp for SFTP
       run: sudo apt-get install lftp
 
-    - name: FTP Deploy
+    - name: SFTP Deploy
       run: |
         lftp -e "
         set ssl:verify-certificate no;
+        set sftp:auto-confirm yes;
         set net:socket-buffer 524288;
-        open ftp://devilaks_veda_ftp@devilaks.ftp.tools;
+        open sftp://devilaks_veda_ftp@devilaks.ftp.tools;
         user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }};
         lcd ./build;
         mirror --reverse --delete --verbose --parallel=10 . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/test;
