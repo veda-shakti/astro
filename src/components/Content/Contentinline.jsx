@@ -9,8 +9,7 @@ const Contentinline = (props) => {
     useEffect(() => {
         const mainFrame = document.getElementById(`content${props.contentid}`);
         const scroll = mainFrame.querySelector(".scrolldiv");
-
-        const postcontainer2 = mainFrame.parentElement.parentElement.parentElement.querySelector(".postcontainer");
+        
 
         function handleHorizontalScroll(e) {
             if (window.innerWidth < 320 || window.innerWidth > 960) {

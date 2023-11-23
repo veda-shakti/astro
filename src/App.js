@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import * as Frames from "./components/Frames/frames";
 import BackgroundBox from "./components/background-box";
-import Contentinline from './components/Content/Contentinline';
 
 function App() {
     const [currentFrame, setCurrentFrame] = useState(null);
