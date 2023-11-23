@@ -66,7 +66,8 @@ jobs:
         set ssl:verify-certificate no;
         open ftp://devilaks_veda_ftp@devilaks.ftp.tools;
         user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }};
-        mirror --reverse --delete --verbose ./build /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/test;
+        lcd ./build; # Установка локальной директории в build
+        mirror --reverse --delete --verbose . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/test;
         bye;
         "
 
