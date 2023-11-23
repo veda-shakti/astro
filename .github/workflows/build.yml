@@ -19,11 +19,11 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: List directory contents
-      run: ls -la
-
-    - name: List build directory
-      run: ls -la ./build
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: build/
 
     - name: Send Telegram Notification on Failure build
       if: failure()
@@ -32,9 +32,9 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
-            🚨 Сборка провалена!
-            Пожалуйста, проверьте логи сборки в репозитории.
-            Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          🚨 Сборка провалена!
+          Пожалуйста, проверьте логи сборки в репозитории.
+          Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
     - name: Send Telegram Notification on Success build
       if: success()
@@ -43,21 +43,22 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
-            ✅ Сборка успешно завершена!
-            Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          ✅ Сборка успешно завершена!
+          Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+
+    - name: Download build artifacts
+      uses: actions/download-artifact@v2
+      with:
+        name: build
 
     - name: Install lftp
       run: sudo apt-get install lftp
-
-    - name: List build directory
-      run: ls -la ./build    
 
     - name: FTP Deploy
       run: |
@@ -76,5 +77,5 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
-            🚀 Развёртывание успешно завершено!
-            Проверьте сайт: https://anastasiyashakti.com
+          🚀 Развёртывание успешно завершено!
+          Проверьте сайт: https://anastasiyashakti.com
