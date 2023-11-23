@@ -70,17 +70,7 @@ jobs:
         user ${{ secrets.SFTP_USERNAME }} ${{ secrets.SFTP_PASSWORD }};
         lcd ./build;
         mirror --reverse --delete --verbose --parallel=10 . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro;
-        bye;
-        "
-
-        sleep 60
-
-        lftp -e "
-        set ssl:verify-certificate no;
-        set sftp:auto-confirm yes;
-        open sftp://devilaks@devilaks.ftp.tools;
-        user ${{ secrets.SFTP_USERNAME }} ${{ secrets.SFTP_PASSWORD }};
-        mv /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/build/static /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz;
+        mv /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/build/static /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/static;
         bye;
         "
 
