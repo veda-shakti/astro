@@ -71,7 +71,7 @@ jobs:
         lcd ./build;
         mirror --reverse --delete --verbose --parallel=10 . /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro;
 
-        cp -r /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro/ /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/;
+        mv /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro/* /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/;
         rm -r /home/devilaks/anastasiyashakti.com/godovoy-astroprognoz/astro/;
 
         bye;
