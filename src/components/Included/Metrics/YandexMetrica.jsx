@@ -1,6 +1,6 @@
 /* global ym */
 
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 export class YandexMetrica extends Component {
     componentDidMount() {

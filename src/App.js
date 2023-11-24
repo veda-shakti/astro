@@ -7,12 +7,6 @@ function App() {
     const [currentFrame, setCurrentFrame] = useState(null);
     const [animating, setAnimating] = useState(false);
     const [currentFrameIndex=0, setCurrentFrameIndex] = useState(0);
-    const data = {
-        ease: 0.1,
-        current: 0,
-        previous: 0,
-        rounded: 0,
-    };
 
     useEffect(() => {
         const frames = document.querySelectorAll('.content');
