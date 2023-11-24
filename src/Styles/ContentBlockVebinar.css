@@ -190,46 +190,53 @@
         .content.blockvebinar .vebinar_block ul .vebinar_block_li {
           font-size: 20px;
           line-height: 110%;
-          padding-bottom: 15px; }
+          padding-bottom: 15px;
+          left: -15px; }
           .content.blockvebinar .vebinar_block ul .vebinar_block_li:last-child {
             padding: 0; } }
 @media (min-width: 320px) and (max-width: 559px) {
   .content.blockvebinar {
     position: absolute;
     margin: 0px;
-    width: 290px;
-    height: 2500px; }
+    width: 100%;
+    height: 100%; }
     .content.blockvebinar .contentblock {
       margin-top: 110px;
-      width: 290px;
-      height: 2480px; }
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      flex-direction: column; }
     .content.blockvebinar .vebinar_title {
       font-size: 24px;
       line-height: 110%;
-      width: 290px;
+      width: auto;
       margin: 0 0 10px 0; }
     .content.blockvebinar .vebinar_info {
       font-size: 18px;
       text-align: center;
       line-height: 110%;
       margin: 0;
-      width: 290px;
+      width: 100%;
       margin-bottom: 20px; }
     .content.blockvebinar .reg {
-      position: absolute;
-      font-family: "Futura PT", sans-serif;
+      position: relative;
+      top: 0;
       bottom: 0;
-      top: 2500px;
-      left: 60px;
+      left: 0;
+      right: 0;
+      font-family: "Futura PT", sans-serif;
       width: 180px;
       height: 35px;
       padding: 20px 0px 20px 0px;
       border-radius: 80px;
-      font-size: 16px; }
+      font-size: 16px;
+      margin: 20px auto;
+      justify-content: center; }
     .content.blockvebinar .vebinar_block {
       border-radius: 20px;
       background: linear-gradient(206deg, rgba(175, 59, 9, 0.2) 7.3%, rgba(251, 215, 125, 0.2) 30.76%, rgba(255, 236, 190, 0.2) 43.35%, rgba(251, 215, 125, 0.2) 59.94%, rgba(175, 59, 9, 0.2) 82.83%);
-      width: 250px;
+      width: auto;
       padding: 20px;
       margin-right: 0px;
       margin-bottom: 10px;
@@ -240,7 +247,7 @@
       cursor: default; }
       .content.blockvebinar .vebinar_block .vebinar_block_h3 {
         font-size: 24px;
-        width: 250px;
+        width: 100%;
         font-style: normal;
         font-weight: 700;
         line-height: 110%;
@@ -249,11 +256,12 @@
       .content.blockvebinar .vebinar_block .vebinar_block_description {
         font-size: 24px;
         line-height: 110%;
-        width: 250px;
+        width: 100%;
         text-align: center;
         margin: 0; }
       .content.blockvebinar .vebinar_block ul {
-        margin-top: 10px; }
+        margin-top: 10px;
+        padding-left: 20px; }
         .content.blockvebinar .vebinar_block ul .vebinar_block_li {
           font-size: 16px;
           line-height: 110%;

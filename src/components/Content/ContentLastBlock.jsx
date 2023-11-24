@@ -16,12 +16,11 @@ const ContentLastBlock = (props) => {
                         </h2>
                         <p className="lastblock_p">
                             Дата проведения: 02.12.2023<br/>
-                            Стоимость: 6000 грн/150 €*
+                            Размер вознаграждения: 6000 грн*
                         </p>
                         <button className="lastblock_reg">Зарегистрироваться</button>
                         <p className="lastblock_ps">
-                            *Если у вас возникли трудности с оплатой, пишите на почту
-                            <a href="mailto:supportshakti@gmail.com"> supportshakti@gmail.com</a>
+                            *При оплате с других стран -  конвертация валюты проходит  автоматически по актуальному курсу НБУ
                         </p>
                     </div>
 

@@ -55,7 +55,7 @@
     transition-duration: 0.3s;
     text-align: center;
     line-height: 110%;
-    margin: 70px 0 0 0; }
+    margin: 0; }
     .frame13 .frame13_block {
       width: 730px;
       height: 100%;
@@ -158,9 +158,10 @@
     text-align: center;
     line-height: 110%;
     margin: 0;
-    height: 52px; }
+    height: 100%;
+    width: 100%; }
     .frame13 .frame13_block {
-      width: 290px;
+      width: auto;
       height: 100%; }
       .frame13 .frame13_block .containerforframe13 {
         width: 100%;
@@ -168,7 +169,7 @@
         flex-wrap: wrap; }
       .frame13 .frame13_block #column1,
       .frame13 .frame13_block #column2 {
-        width: 290px; }
+        width: 100%; }
       .frame13 .frame13_block #column1 {
         padding-right: 0px; }
       .frame13 .frame13_block #column2 {
@@ -188,18 +189,21 @@
         font-size: 24px;
         font-weight: 700; }
       .frame13 .frame13_content_block_p {
-        margin: 0; }
+        margin: 0;
+        font-size: 16px;
+        line-height: 110%;
+        font-family: "Futura PT", sans-serif; }
     .frame13 .frame13_content {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       padding-bottom: 90px; }
-      .frame13 .frame13_content_h2 {
-        line-height: 110%;
-        font-size: 24px;
-        font-weight: 700;
-        margin-top: 50px;
-        margin-bottom: 52px;
-        text-align: center; } }
+    .frame13_h2 {
+      line-height: 110%;
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      text-align: center; } }
 
 /*# sourceMappingURL=contentFeedBack.css.map */

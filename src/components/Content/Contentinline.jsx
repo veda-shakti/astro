@@ -81,12 +81,6 @@ const Contentinline = (props) => {
 
                                 <div className="inline_block">
                                     <img src={point} alt="" className="inline_img"/>
-                                    <h5 className="inline_h5">Здоровье и Красота</h5>
-                                    <p className="inline_p">Узнайте неподходящие периоды для медицинских процедур и косметических вмешательств.</p>
-                                </div>
-
-                                <div className="inline_block">
-                                    <img src={point} alt="" className="inline_img"/>
                                     <h5 className="inline_h5">Долгосрочный Результат</h5>
                                     <p className="inline_p">Применяйте регулярно в течении года астропланирование и заложите положительные изменения на несколько лет вперёд.</p>
                                 </div>

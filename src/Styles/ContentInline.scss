@@ -11,7 +11,7 @@
     width :1020px;
     height: 530px;
     &.horizonral {
-      width:3635px
+      width:3135px
     }
   }
 
@@ -130,7 +130,7 @@
       width :795px;
       height: 420px;
       &.horizonral {
-        width:3465px
+        width:3000px
       }
     }
 
@@ -189,7 +189,7 @@
     }
     .contentblock {
       width :460px;
-      height: 1150px;
+      height: 1000px;
       &.horizonral {
         width:460px
       }
@@ -281,18 +281,22 @@
 @media (min-width: 320px) and (max-width: 559px) {
   .content.inlinecontent {
     margin-left: 0px;
-    width: 290px;
+    width: 100%;
+    height: 100%;
     .frame5_block.inlineframe {
       position: absolute;
-      width: 290px;
+      width: 100%;
+      height: 100%;
       overflow: visible;
       margin:0;
     }
     .contentblock {
-      width :290px;
-      height: 1050px;
+      width :100%;
+      height: 100%;
+      display: flex;
+
       &.horizonral {
-        width:290px
+        width:100%;
       }
     }
     .frame5_block {
@@ -307,9 +311,9 @@
       .scrolldiv {
         &.horizontal {
           overflow-y: auto;
-          height: 430px;
+          height: 100%;
           position: relative;
-          width: 290px;
+          width: 100%;
           left: 0;
           top: 0;
           overflow-x: hidden;
@@ -328,7 +332,7 @@
         text-align: center;
         font-size: 24px;
         width: 100%;
-        margin: 0;
+        margin: 50px 0 0 0;
 
         //margin-top: 113px;
         margin-bottom: 20px;
@@ -337,8 +341,10 @@
         display: flex;
         position: absolute;
         left: 0px;
-        width: auto;
         flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
       }
       .frame5_block_list.inlineblock {
         top: 0;
@@ -346,7 +352,8 @@
       .inline_block{
         display: flex;
         color: #FBD77D;
-        width: 290px;
+        width: auto;
+        margin-left: 40px;
         margin-right: 40px;
         flex-direction: row;
         transition: all 0.3s ease;
@@ -363,13 +370,13 @@
           line-height: 110%;
           height: auto;
           margin: 0;
-          width: 200px;
+          width: auto;
           padding-left: 48px;
           padding-bottom: 5px;
         }
         .inline_p {
           font-size: 18px;
-          width: 260px;
+          width: auto;
           margin: 0;
           padding-left: 48px;
           line-height: 110%;

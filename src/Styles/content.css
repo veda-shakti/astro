@@ -192,7 +192,7 @@
     }
     .scrolldiv {
         overflow-y: hidden;
-        height: 340px;
+        height: 390px;
         position: absolute;
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none; /* IE and Edge */
@@ -374,9 +374,9 @@
         margin: 15px 15px;
     }
     .content.introphone {
-        width: 240px;
-        height: 420px;
-        margin: 67px 25px;
+        width: 100%;
+        height: 100%;
+        margin: auto;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -389,13 +389,28 @@
     }
     .scrolldiv{
         overflow-y: auto;
+        width: auto;
+        padding: 0 15px;
+        height: 100%;
+    }
+    #content2 .scrolldiv{
+        width: 100%;
+        padding: 0;
+    }
+    .scrolldiv.fullwidthscroll {
+
+        padding: 0;
+
     }
     .content.introphone .frame2_block {
         /* width: ; */
-        position: relative;
+        position: absolute;
         text-align: center;
         width: 240px;
         height: 420px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     .content.introphone .frame2_block .frame2_block_time {
         font-size: 18px;
@@ -406,6 +421,10 @@
         text-align: center;
         top:400px;
         width: 240px;
+    }
+    .absolute {
+        height: 100%;
+        width: 100%;
     }
     .content.introphone .frame2_block .frame2_block_h1 {
         font-size: 24px;
