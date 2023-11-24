@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import ReactPixel from 'react-facebook-pixel';
 
 export class FacebookPixel extends Component {
