@@ -1,11 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import * as Frames from "./components/Frames/frames";
 import BackgroundBox from "./components/background-box";
+import Meta from "./components/Meta";
 
 function App() {
     const [currentFrame, setCurrentFrame] = useState(null);
     const [animating, setAnimating] = useState(false);
     const [currentFrameIndex=0, setCurrentFrameIndex] = useState(0);
+    const data = {
+        ease: 0.1,
+        current: 0,
+        previous: 0,
+        rounded: 0,
+    };
 
     useEffect(() => {
         const frames = document.querySelectorAll('.content');
@@ -253,6 +260,7 @@ function App() {
 
     return (
         <div className="App">
+            <Meta/>
             <BackgroundBox
             bg="cosmos">
 
