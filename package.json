@@ -10,8 +10,10 @@
     "cross-env": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-facebook-pixel": "^1.0.4",
     "react-helmet": "^6.1.0",
     "react-scripts": "^5.0.1",
+    "react-yandex-metrika": "^2.6.0",
     "sass": "^1.69.5",
     "web-vitals": "^2.1.4"
   },
