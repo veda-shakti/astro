@@ -16,12 +16,12 @@ const Contentinline = (props) => {
                 if (!props.animating && props.currentframe.id === "content9") {
                     let scrollAmount = 0;
                     const slideTimer = setInterval(function(){
-                        scroll.scrollLeft += e.deltaY / 10;
-                        scrollAmount += 20;
+                        scroll.scrollLeft += e.deltaY / 20;
+                        scrollAmount += 10;
                         if(scrollAmount >= 100){
                             window.clearInterval(slideTimer);
                         }
-                    }, 25);
+                    }, 10);
                 }
             }
         }

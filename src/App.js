@@ -2,16 +2,22 @@ import React, {useEffect, useState} from 'react';
 import * as Frames from "./components/Frames/frames";
 import BackgroundBox from "./components/background-box";
 import Meta from "./components/Meta";
+import ContactFormPay from "./components/FormPay/ContactFormPay";
+import ModalContext from './components/FormPay/ModalContext';
 
 function App() {
+    const [showModal, setShowModal] = useState(false);
     const [currentFrame, setCurrentFrame] = useState(null);
     const [animating, setAnimating] = useState(false);
     const [currentFrameIndex=0, setCurrentFrameIndex] = useState(0);
+    let shouldswitch = true;
+
+
+
 
     useEffect(() => {
         const frames = document.querySelectorAll('.content');
         setCurrentFrame(frames[currentFrameIndex]);
-        let shouldswitch = true;
 
         function handleTouchStart(e) {
             // Сохранение начальной точки касания
@@ -38,6 +44,60 @@ function App() {
             const direction = e.deltaY > 0 ? 'up' : 'down';
             handleScroll(direction);
         }
+
+        async function switchFrames(nextFrame, thisframe, direction) {
+            const currentTranslate = direction === 'up' ? '-100vh' : '100vh';
+            const nextInitialTranslate = direction === 'up' ? '100vh' : '-100vh';
+
+            nextFrame.style.transform = `translateY(${nextInitialTranslate})`;
+            nextFrame.style.opacity = '1';
+            nextFrame.style.pointerEvents = 'auto';
+            thisframe.style.opacity = '0';
+            thisframe.style.pointerEvents = 'none';
+
+            await new Promise(resolve => requestAnimationFrame(resolve));
+
+            nextFrame.style.transform = 'translateY(0vh)';
+            thisframe.style.transform = `translateY(${currentTranslate})`;
+
+            await new Promise(resolve => {
+                nextFrame.addEventListener('transitionend', resolve, {once: true});
+            });
+        }
+        function switchFrame(direction) {
+            if (shouldswitch) {
+
+                // Определение следующего кадра в зависимости от направления прокрутки
+                let nextFrameIndex;
+
+                if (direction === 'up') {
+                    if (currentFrameIndex === frames.length - 1) {
+                        return;
+                    } // Если это последний элемент, прекратить прокрутку
+                    nextFrameIndex = currentFrameIndex + 1;
+                } else {
+                    if (currentFrameIndex === 0) {
+                        return; // Если это первый элемент, прекратить прокрутку
+                    }
+                    nextFrameIndex = currentFrameIndex - 1;
+                }
+
+                const nextFrame = frames[nextFrameIndex];
+
+                if (nextFrame && !animating) {
+                    setAnimating(true);
+                    setCurrentFrameIndex(nextFrameIndex);
+
+                    switchbg(nextFrameIndex, direction);
+
+                    // Обновление индекса здесь
+                    switchFrames(nextFrame, currentFrame, direction).then(() => {
+                        setAnimating(false);
+                        setCurrentFrame(nextFrame);
+                    });
+                }
+            }
+        }
         function handleScroll(direction) {
             // Определение направления прокрутки
 
@@ -54,21 +114,21 @@ function App() {
                     if (direction === 'up') {
                         let scrollAmount = 0;
                         const slideTimer = setInterval(function(){
-                            scroll.scrollTop +=  10;
-                            scrollAmount += 20;
+                            scroll.scrollTop +=  5;
+                            scrollAmount += 10;
                             if(scrollAmount >= 100){
                                 window.clearInterval(slideTimer);
                             }
-                        }, 25);
+                        }, 10);
                     } else {
                         let scrollAmount = 0;
                         const slideTimer = setInterval(function(){
-                            scroll.scrollTop -=  10;
-                            scrollAmount += 20;
+                            scroll.scrollTop -= 5;
+                            scrollAmount += 10;
                             if(scrollAmount >= 100){
                                 window.clearInterval(slideTimer);
                             }
-                        }, 25);
+                        }, 10);
                     }
                 }
 
@@ -114,42 +174,6 @@ function App() {
                 switchFrame(direction);
             }
         }
-
-        function switchFrame(direction) {
-            if (shouldswitch) {
-
-            // Определение следующего кадра в зависимости от направления прокрутки
-                let nextFrameIndex;
-
-                if (direction === 'up') {
-                    if (currentFrameIndex === frames.length - 1) {
-                        return;
-                    } // Если это последний элемент, прекратить прокрутку
-                    nextFrameIndex = currentFrameIndex + 1;
-                } else {
-                    if (currentFrameIndex === 0) {
-                        return; // Если это первый элемент, прекратить прокрутку
-                    }
-                    nextFrameIndex = currentFrameIndex - 1;
-                }
-
-                const nextFrame = frames[nextFrameIndex];
-
-                if (nextFrame && !animating) {
-                    setAnimating(true);
-                    setCurrentFrameIndex(nextFrameIndex);
-
-                    switchbg(nextFrameIndex, direction);
-
-                    // Обновление индекса здесь
-                    switchFrames(nextFrame, currentFrame, direction).then(() => {
-                        setAnimating(false);
-                        setCurrentFrame(nextFrame);
-                    });
-                }
-            }
-        }
-
         async function switchbg (index,direction) {
             const isCosmos1 = index < 5;
             const isCosmos2 = index > 7
@@ -194,7 +218,7 @@ function App() {
                     switchFrames(document.getElementById('frame3'), document.getElementById('frame4'), direction);
                 }
             }
-                else {
+            else {
                 document.getElementById('box1').classList.remove('fullwidthbg');
                 if (direction === 'down' && index === 6) {
                     switchFrames(document.getElementById('frame2'), document.getElementById('frame3'), direction)
@@ -203,41 +227,21 @@ function App() {
                     switchFrames(document.getElementById('frame4'), document.getElementById('frame3'), direction)
                 }
             }
-                if (lastframe) {
-                    document.getElementById('box1').classList.add('fullwidthbg');
-                    document.getElementById('frame4').classList.add('lastphone');
-                    document.getElementById('footer').style.opacity = '1';
-                    document.getElementById('footer').style.transform = `translateY(0)`;
-                } else {
-                    if (!isFullWidth) {
-                        document.getElementById('box1').classList.remove('fullwidthbg');
-                    }
-                    document.getElementById('frame4').classList.remove('lastphone');
-                    document.getElementById('footer').style.opacity = '0';
-                    document.getElementById('footer').style.transform = `translateY(100vh)`;
+            if (lastframe) {
+                document.getElementById('box1').classList.add('fullwidthbg');
+                document.getElementById('frame4').classList.add('lastphone');
+                document.getElementById('footer').style.opacity = '1';
+                document.getElementById('footer').style.transform = `translateY(0)`;
+            } else {
+                if (!isFullWidth) {
+                    document.getElementById('box1').classList.remove('fullwidthbg');
                 }
+                document.getElementById('frame4').classList.remove('lastphone');
+                document.getElementById('footer').style.opacity = '0';
+                document.getElementById('footer').style.transform = `translateY(100vh)`;
+            }
 
 
-        }
-
-        async function switchFrames(nextFrame, thisframe, direction) {
-            const currentTranslate = direction === 'up' ? '-100vh' : '100vh';
-            const nextInitialTranslate = direction === 'up' ? '100vh' : '-100vh';
-
-            nextFrame.style.transform = `translateY(${nextInitialTranslate})`;
-            nextFrame.style.opacity = '1';
-            nextFrame.style.pointerEvents = 'auto';
-            thisframe.style.opacity = '0';
-            thisframe.style.pointerEvents = 'none';
-
-            await new Promise(resolve => requestAnimationFrame(resolve));
-
-            nextFrame.style.transform = 'translateY(0vh)';
-            thisframe.style.transform = `translateY(${currentTranslate})`;
-
-            await new Promise(resolve => {
-                nextFrame.addEventListener('transitionend', resolve, { once: true });
-            });
         }
 
         window.addEventListener('wheel', scrollwheel);
@@ -254,6 +258,8 @@ function App() {
 
     return (
         <div className="App">
+            <ModalContext.Provider value={{ showModal, setShowModal }}>
+
             <Meta/>
             <BackgroundBox
             bg="cosmos">
@@ -266,6 +272,8 @@ function App() {
                     currentframe = {currentFrame}/>
 
             </BackgroundBox>
+                <ContactFormPay />
+            </ModalContext.Provider>
         </div>
     );
 }
