@@ -103,7 +103,7 @@
     height: 524px;
     overflow: hidden;
     position: fixed;
-    margin: 102px 130px 100px 100px;
+    margin: 102px 120px 100px 100px;
     top: 0;
     bottom: 0;
     left: 0;
@@ -203,8 +203,8 @@
     }
     .container.phone {
         background-image: none;
-        width: 460px;
-        height: 700px;
+        width: auto;
+        height: 100%;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -218,7 +218,7 @@
         display: none;
     }
     .postcontainer {
-        height: 700px;
+        height: 100%;
         overflow: hidden;
         position: fixed;
         margin: 0;

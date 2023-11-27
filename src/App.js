@@ -105,7 +105,10 @@ function App() {
             const scroll = currentFrame.querySelector('.scrolldiv');
             const block = currentFrame.querySelector('.contentblock');
             const container = currentFrame.parentElement.parentElement;
-
+            console.log(scroll.scrollTop);
+            console.log(scroll.scrollHeight);
+            console.log( container.offsetHeight);
+            console.log( block.offsetHeight);
 
             if ((scroll.scrollHeight >= container.offsetHeight && block.offsetHeight > 500) && (container.offsetHeight !== 0)) {
                 if (animating)

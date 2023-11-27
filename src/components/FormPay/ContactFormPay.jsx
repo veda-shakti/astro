@@ -59,15 +59,15 @@ const ContactFormPay = () => {
                                 <input type="email" name="email" placeholder="Почта*" value={formState.email} onChange={handleInputChange} required />
                             </label>
                             <input className="button-submit" type="submit" value="Перейти к оплате" />
-                            <input type="hidden" name="order_id" value="your_order_id" />
-                            <input type="hidden" name="merchant_id" value="Инфа от Анастасии" />
-                            <input type="hidden" name="order_desc" value="Буст в жизнь" />
-                            <input type="hidden" name="amount" value="600000" /> <!-- Сумма в копейках -->
-                            <input type="hidden" name="currency" value="UAH" />
-                            <input type="hidden" name="signature" value="your_generated_signature" />
-                            <input type="hidden" name="response_url" value="your_response_url" />
-                            <input type="hidden" name="server_callback_url" value="your_server_callback_url" />
-                            <input type="submit" value="Оплатить 6000 грн" />
+                            {/*<input type="hidden" name="order_id" value="your_order_id" />*/}
+                            {/*<input type="hidden" name="merchant_id" value="Инфа от Анастасии" />*/}
+                            {/*<input type="hidden" name="order_desc" value="Буст в жизнь" />*/}
+                            {/*<input type="hidden" name="amount" value="600000" /> <!-- Сумма в копейках -->*/}
+                            {/*<input type="hidden" name="currency" value="UAH" />*/}
+                            {/*<input type="hidden" name="signature" value="your_generated_signature" />*/}
+                            {/*<input type="hidden" name="response_url" value="your_response_url" />*/}
+                            {/*<input type="hidden" name="server_callback_url" value="your_server_callback_url" />*/}
+                            {/*<input type="submit" value="Оплатить 6000 грн" />*/}
                         </form>
                     </div>
                 </div>

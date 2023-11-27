@@ -4,10 +4,10 @@
     margin: 0 105px;
     width: 915px;
     font-family: "Futura PT", sans-serif;
-    height:2120px;
+    height: 100%;
     .contentblock{
       margin-top:110px;
-      height:2080px;
+      height: auto;
     }
 
 
@@ -33,11 +33,11 @@
       margin-bottom: 40px;
     }
     .reg {
-      position: absolute;
+      position: relative;
       font-family: "Futura PT", sans-serif;
-      bottom: 0;
-      top:2090px;
-      left: 293px;
+      display: block;
+      margin-left: auto ;
+      margin-right: auto;
       width: 330px;
       height: 65px;
       padding: 23px 0px 23px 0px;
@@ -50,6 +50,7 @@
       font-style: normal;
       font-weight: 400;
       line-height: 96%;
+      margin-bottom: 100px;
       transition-duration: 0.3s;
       color: #FFF9F1;
       background-color:#DCB354;
@@ -70,6 +71,9 @@
       justify-content: center;
       transition: all 0.3s ease;
       cursor: default;
+      font-size: 24px;
+      line-height: 110%;
+
       .vebinar_block_h3 {
         font-family: 'Futura PT', sans-serif;
         text-align: center;
@@ -104,10 +108,10 @@
     &.blockvebinar {
       margin: 30px 65px 0 85px;
       width: 730px;
-      height:1960px;
+      height: 100%;
       .contentblock{
         margin-top:110px;
-        height:1940px;
+        height: auto;
       }
       .vebinar_title {
         font-size: 36px;
@@ -128,10 +132,9 @@
         margin: 0;
         width: 730px;
         margin-bottom: 30px;
+
       }
       .reg {
-        top:1970px;
-        left: 215px;
         width: 300px;
         height: 55px;
         padding: 25px 18px;
@@ -142,6 +145,8 @@
         padding: 35px;
         margin-right: 0;
         margin-bottom: 20px;
+        font-size: 20px;
+        line-height: 110%;
         .vebinar_block_li {
           font-size: 20px;
           line-height: 110%;
@@ -160,17 +165,18 @@
     &.blockvebinar {
       position: absolute;
       margin: 0px;
-      width: 460px;
-      height:2760px;
+      width: calc(100% - 200px);
+      padding: 0 50px;
+      height:100%;
       .contentblock{
         margin-top:100px;
-        width: 460px;
-        height:2740px;
+        width: 100%;
+        height:auto;
       }
       .vebinar_title {
         font-size: 36px;
         line-height: 110%;
-        width: 460px;
+        width: 100%;
         margin: 0 0 30px 0 ;
       }
 
@@ -179,25 +185,30 @@
         text-align: center;
         line-height: 110%;
         margin: 0;
-        width: 460px;
+        width: 100%;
         margin-bottom: 30px;
       }
       .reg {
-        position: absolute;
-        font-family: "Futura PT", sans-serif;
+        position: relative;
+        top:0;
         bottom: 0;
-        top:2720px;
-        left: 80px;
+        left: 0;
+        right: 0;
+        font-family: "Futura PT", sans-serif;
         width: 300px;
         height: 55px;
         padding: 20px 0px 20px 0px;
+        margin-bottom: 60px;
         font-size: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .vebinar_block {
         border-radius: 20px;
         background: linear-gradient(206deg, rgba(175, 59, 9, 0.20) 7.3%, rgba(251, 215, 125, 0.20) 30.76%, rgba(255, 236, 190, 0.20) 43.35%, rgba(251, 215, 125, 0.20) 59.94%, rgba(175, 59, 9, 0.20) 82.83%);
-        width: 390px;
+        width: auto;
         padding: 35px;
         margin-right: 0px;
         margin-bottom: 30px;
@@ -206,9 +217,11 @@
         justify-content: center;
         transition: all 0.3s ease;
         cursor: default;
+        font-size: 20px;
+        line-height: 110%;
         .vebinar_block_h3 {
           font-size: 36px;
-          width: 390px;
+          width: auto;
           font-style: normal;
           font-weight: 700;
           line-height: 110%; /* 44px */
@@ -217,7 +230,7 @@
         .vebinar_block_description{
           font-size: 24px;
           line-height: 110%;
-          width: 390px;
+          width: auto;
           text-align: center;
           margin: 0;
 
@@ -300,6 +313,8 @@
         justify-content: center;
         transition: all 0.3s ease;
         cursor: default;
+        font-size: 16px;
+        line-height: 110%;
         .vebinar_block_h3 {
           font-size: 24px;
           width: 100%;

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import '../../Styles/ContentLastBlock.css'
 import '../../Styles/content.css'
 import emblem  from '../../assets/emblem.png'
+import ModalContext from "../FormPay/ModalContext";
 const ContentLastBlock = (props) => {
+
+    const { setShowModal } = useContext(ModalContext);
+
     return (
         <div className="absolute">
             <div className="content lastblock" id={`content${props.contentid}`}>
@@ -18,9 +22,10 @@ const ContentLastBlock = (props) => {
                             Дата проведения: 02.12.2023<br/>
                             Размер вознаграждения: 6000 грн*
                         </p>
-                        <button className="lastblock_reg">Зарегистрироваться</button>
+                        <button onClick={() => setShowModal(true)} className="lastblock_reg">Зарегистрироваться</button>
                         <p className="lastblock_ps">
-                            *При оплате с других стран -  конвертация валюты проходит  автоматически по актуальному курсу НБУ
+                            *При оплате с других стран -  конвертация валюты проходит  автоматически по актуальному курсу НБУ <br/>
+                            **При возникновении трудностей с оплатой обращайтесь на почту <a>anastasiyashakti@gmail.com</a>
                         </p>
                     </div>
 
