@@ -65,19 +65,23 @@ function App()
             });
         }
 
-        function switchFrame(direction) {
+        function switchFrame(direction) 
+        {
             if (shouldswitch) {
 
                 // Определение следующего кадра в зависимости от направления прокрутки
                 let nextFrameIndex;
 
-                if (direction === 'up') {
+                if (direction === 'up') 
+                {
                     // Если это последний элемент, прекратить прокрутку
                     if (currentFrameIndex === frames.length - 1)
                         return;
                     
                     nextFrameIndex = currentFrameIndex + 1;
-                } else {
+                } 
+                else 
+                {
                     // Если это первый элемент, прекратить прокрутку
                     if (currentFrameIndex === 0)
                         return; 
@@ -87,7 +91,8 @@ function App()
 
                 const nextFrame = frames[nextFrameIndex];
 
-                if (nextFrame && !animating) {
+                if (nextFrame && !animating) 
+                {
                     setAnimating(true);
                     setCurrentFrameIndex(nextFrameIndex);
 
@@ -177,8 +182,7 @@ function App()
             }
         }
 
-        async function switchbg (index,direction) 
-        {
+        async function switchbg (index,direction) {
             const isCosmos1 = index < 5;
             const isCosmos2 = index > 7
             const isPhone1 = index >= 1;
@@ -186,7 +190,8 @@ function App()
             const isMoney = index >= 5 && index < 7;
             const isFullWidth = index === 7;
             const lastframe = index === 11;
- 
+
+
             if (isCosmos1)
                 document.getElementById('box1').classList.add('cosmos');
             else
@@ -197,32 +202,34 @@ function App()
             else
                 document.getElementById('box1').classList.remove('cosmos2');
 
-            if (isPhone1)
-                if (index === 1 && direction === "up")
+            if (isPhone1) {
+                if(index === 1 && direction === "up")
                     await switchFrames(document.getElementById('frame2'), document.getElementById('frame1'), direction);
+            }
             else
-                await switchFrames(document.getElementById('frame1'), document.getElementById('frame2'), direction)
+                await switchFrames(document.getElementById('frame1'), document.getElementById('frame2'), direction);
 
             if (isMoney)
                 document.getElementById('box1').classList.add('money');
             else
                 document.getElementById('box1').classList.remove('money');
 
-            if (isFullWidth) 
+            if (isFullWidth)
             {
                 document.getElementById('box1').classList.add('fullwidthbg');
                 if (direction === "up")
                     await switchFrames(document.getElementById('frame3'), document.getElementById('frame2'), direction);
                 else
                     await switchFrames(document.getElementById('frame3'), document.getElementById('frame4'), direction);
-            } 
+            }
             else 
             {
                 document.getElementById('box1').classList.remove('fullwidthbg');
                 if (direction === 'down' && index === 6)
-                    await switchFrames(document.getElementById('frame2'), document.getElementById('frame3'), direction)
-                if (isPhone2) 
-                    await switchFrames(document.getElementById('frame4'), document.getElementById('frame3'), direction)
+                    await switchFrames(document.getElementById('frame2'), document.getElementById('frame3'), direction);
+                
+                if (isPhone2)
+                    await switchFrames(document.getElementById('frame4'), document.getElementById('frame3'), direction);
             }
 
             if (lastframe) 
@@ -259,11 +266,11 @@ function App()
 
     const fetchData = async () => {
         try {
-        // Запрос к API или другая асинхронная операция
-        setIsLoading(false);
+            // Запрос к API или другая асинхронная операция
+            setIsLoading(false);
         } catch (error) {
-        console.error('Ошибка при загрузке данных', error);
-        setIsLoading(false);
+            console.error('Ошибка при загрузке данных', error);
+            setIsLoading(false);
         }
     };
 
