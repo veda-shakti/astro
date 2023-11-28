@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../../Styles/Privacy.css'
 const Privacy = ({ isVisible, setShowPrivacy }) => {
     return (
