@@ -3,6 +3,7 @@ import '../../Styles/ModalFornPay.css'
 import ModalContext from "./ModalContext";
 import Successwindow from "./Successwindow";
 import Errorwindow from "./Errorwindow";
+import Privacy from "./Privacy";
 const ContactFormPay = () => {
 
     const { showModal, setShowModal } = useContext(ModalContext);
@@ -10,6 +11,7 @@ const ContactFormPay = () => {
     const [renderModal, setRenderModal] = useState(false);
     const [showClass, setShowClass] = useState(false);
     const [addNodal, setAddModal] = useState(0);
+    const [showPrivacy, setShowPrivacy] = useState(false);
 
     const handleInputChange = (event) => {
         setFormState({
@@ -60,7 +62,7 @@ const ContactFormPay = () => {
                         {(addNodal === 0 &&
                         <form id="contactForm" onSubmit={handleSubmit}>
                             <h2>Форма регистрации</h2>
-                            <p>После заполнения формы регистрации Вас переведёт на страницу оплаты. Далее Вам на почту придут инструкции и ссылка для подключении к чату в Telegram. Отправляя форму, вы соглашаетесь с <a href="/politika">политикой конфиденциальности</a>.</p>
+                            <p>После заполнения формы регистрации Вас переведёт на страницу оплаты. Далее Вам на почту придут инструкции и ссылка для подключении к чату в Telegram. Отправляя форму, вы соглашаетесь с <a onClick={() => setShowPrivacy(true)}>политикой конфиденциальности</a>.</p>
                                 <label>
                                     <input className="name-field first" type="text" name="name" placeholder="Имя" value={formState.name} onChange={handleInputChange}  />
                                 </label>
@@ -92,6 +94,7 @@ const ContactFormPay = () => {
                             button = {<button className="again" onClick={handleSubmit}>Перейти к оплате</button>}/>
                         )}
                     </div>
+                    <Privacy isVisible={showPrivacy} setShowPrivacy={setShowPrivacy} />
                 </div>
             )}
         </div>

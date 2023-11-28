@@ -185,7 +185,7 @@
     .content.introphone {
         width: 860px;
         height: 400px;
-        margin: 20px;
+        margin: 0 20px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;

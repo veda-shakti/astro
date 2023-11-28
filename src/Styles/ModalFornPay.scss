@@ -17,7 +17,11 @@
     opacity: 1;
   }
   .modal-content {
-    margin: 140px auto; /* 15% от верхнего края экрана до модального окна и автоматические отступы по бокам */
+    margin: auto; /* 15% от верхнего края экрана до модального окна и автоматические отступы по бокам */
+    position: fixed; /* Позиционирование относительно окна браузера */
+    top: 50%; /* Позиционирование от верхнего края окна браузера */
+    left: 50%; /* Позиционирование от левого края окна браузера */
+    transform: translate(-50%, -50%);
     padding: 50px;
     width: 900px; /* Ширина модального окна равна 80% */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -65,6 +69,7 @@
     a {
       color: #FFE093;
       text-decoration: underline;
+      cursor: pointer;
     }
     .success,
     .error{
@@ -177,7 +182,7 @@
 @media (min-width: 960px) and (max-width: 1299px) {
   .modal {
     .modal-content {
-      margin: 140px auto;
+      margin: auto;
       padding: 50px;
       width: 760px;
       height: 520px;
@@ -218,7 +223,7 @@
 @media (min-width: 560px) and (max-width: 959px) {
   .modal {
     .modal-content {
-      margin: 140px auto;
+      margin:  auto;
       padding: 50px;
       width: 360px;
       height: 520px;
@@ -293,7 +298,7 @@
 @media (min-width: 320px) and (max-width: 559px) {
   .modal {
     .modal-content {
-      margin: 140px auto;
+      margin: auto;
       padding: 20px;
       width: calc(100% - 100px);
       height: auto;
