@@ -4,11 +4,11 @@ import BackgroundBox from "./components/background-box";
 import Meta from "./components/Meta";
 import ContactFormPay from "./components/FormPay/ContactFormPay";
 import ModalContext from "./components/FormPay/ModalContext";
-import Loader from './components/Loader';
+// import Loader from './components/Loader';
 
 function App()
 {
-    const [isLoading, setIsLoading] = useState(true);
+    // const [isLoading, setIsLoading] = useState(true);
 
     const [showModal, setShowModal] = useState(false);
     const [currentFrame, setCurrentFrame] = useState(null);
@@ -260,50 +260,22 @@ function App()
         };
     }, [currentFrame, currentFrameIndex, animating]);
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     fetchData();
+    // }, []);
 
-    // const fetchData = async () => {
-    //     try {
-    //         const apiCallPromise = fetchSomeData(); // Это ваш API запрос
-    //         const imagesLoadedPromise = loadImages(); // Функция загрузки изображений
-    
-    //         // Ожидание завершения всех промисов
-    //         await Promise.all([apiCallPromise, imagesLoadedPromise]);
-    
-    //         // Когда все операции завершены, убираем Loader
+    // const fetchData = () => {
+    //     if (document.readyState === "complete") {
     //         setIsLoading(false);
-    //     } catch (error) {
-    //         console.error('Ошибка при загрузке данных', error);
-    //         setIsLoading(false);
+    //     } else {
+    //         window.onload = () => {
+    //             setIsLoading(false);
+    //         };
     //     }
-    // };
+    // };       
 
-    const fetchData = () => {
-        // Установить обработчик для события 'load', чтобы убедиться, что все ресурсы загружены
-        window.onload = () => {
-            setIsLoading(false);
-        };
-    };    
-    
-    // const loadImages = () => {
-    //     const images = document.querySelectorAll('img');
-    //     const imageLoadPromises = Array.from(images).map(img => {
-    //         if (img.complete && img.naturalHeight !== 0)
-    //             return Promise.resolve();
-                
-    //         return new Promise((resolve, reject) => {
-    //             img.onload = resolve;
-    //             img.onerror = reject;
-    //         });
-    //     });
-    
-    //     return Promise.all(imageLoadPromises);
-    // };    
-
-    if (isLoading)
-        return <Loader />;
+    // if (isLoading)
+    //     return <Loader />;
 
     return (
         <div className="App">
