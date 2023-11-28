@@ -6,7 +6,7 @@ const ContentFeedBack = (props) => {
 
     useEffect(() => {
         // URL к вашему API-сниппету в MODX
-        const apiURL = 'http://example.com/path-to-snippet';
+        const apiURL = 'https://godovoy-astroprognoz.anastasiyashakti.com/index.php?id=4';
 
         fetch(apiURL)
             .then(response => {
