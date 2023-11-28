@@ -20,12 +20,12 @@ const ContactFormPay = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(formState);
+        // console.log(formState);
         // Здесь вы можете обработать данные формы, например, отправить их на сервер
         setFormState({ name: '', secondName: '', email: '' });
         // setShowModal(false);
-        // window.open('https://pay.fondy.eu/s/5cN5EO9El', '_blank');
-        setAddModal(1);
+        window.open('https://pay.fondy.eu/s/5cN5EO9El', '_blank');
+        // setAddModal(1);
     };
 
     useEffect(() => {
@@ -68,7 +68,8 @@ const ContactFormPay = () => {
                                     <input className="name-field second" type="text" name="secondName" placeholder="Фамилия" value={formState.secondName} onChange={handleInputChange}  />
                                 </label>
                             <label>
-                                <input type="email" name="email" placeholder="Почта*" value={formState.email} onChange={handleInputChange} required />
+                                {/*requied*/}
+                                <input type="email" name="email" placeholder="Почта*" value={formState.email} onChange={handleInputChange}  />
                             </label>
                             <input className="button-submit" type="submit" value="Перейти к оплате" />
                             {/*<input type="hidden" name="order_id" value="your_order_id" />*/}

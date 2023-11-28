@@ -111,7 +111,8 @@
         color: #FBD77D;
         background-color: rgba(0, 0, 0, 0);
         font-family: "Futura PT", sans-serif;
-        font-size: 24px; }
+        font-size: 24px;
+        opacity: 0; }
         .modal .modal-content form input::-webkit-input-placeholder {
           /* Chrome/Opera/Safari */
           color: #FFE09380 !important;
@@ -149,7 +150,8 @@
           cursor: pointer;
           margin-left: auto;
           margin-right: auto;
-          transition: all 0.3s; }
+          transition: all 0.3s;
+          opacity: 1; }
           .modal .modal-content form input.button-submit:hover {
             scale: 1.05;
             -webkit-box-shadow: rgba(241, 236, 229, 0.3960784314) 0px 0px 10px 0px;
