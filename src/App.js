@@ -106,7 +106,6 @@ function App()
         {
             // Определение направления прокрутки
 
-
             const scroll = currentFrame.querySelector('.scrolldiv');
             const block = currentFrame.querySelector('.contentblock');
             const container = currentFrame.parentElement.parentElement;

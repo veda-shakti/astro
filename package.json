@@ -18,7 +18,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "scss": "sass --watch src/Styles:src/Styles",
+    "scss": "sass --watch src/Styles/scss:src/Styles",
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
