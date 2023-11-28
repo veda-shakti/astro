@@ -1,3 +1,4 @@
+
 .modal {
   position: fixed; /* Позиционирование фиксировано, чтобы оно всегда оставалось на месте, даже при прокрутке страницы */
   top: 0; /* Отступ сверху равен 0, чтобы оно начиналось с верхнего края экрана */
@@ -29,44 +30,83 @@
     background: linear-gradient(289deg, #01160F 2.69%, #326A4C 51.61%, #01160F 100%);
 
     .close {
-      font-size: 100px;
-      cursor: pointer;
-      text-align: right;
+        font-size: 100px;
+        cursor: pointer;
+        text-align: right;
+        width: 100%;
+        height: 50px;
+        line-height: 50%;
+    }
+    h2 {
       width: 100%;
-      height: 50px;
-      line-height: 50%;
+      text-align: center;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 110%;
+      margin: 0 0 25px 0;
+    }
+
+    p {
+      color: #FFE093;
+      text-align: center;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%; /* 26.4px */
+    }
+
+    a {
+      color: #FFE093;
+      text-decoration: underline;
+    }
+    .success,
+    .error{
+      transition: opacity 0.3s ease-in-out;
+      position: absolute;
+      margin-top: 100px;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .again {
+      padding: 20px 40px;
+      background-color: #DCB354;
+      color: #FFF9F1;
+      font-size: 20px;
+      line-height: 96%;
+      width: 330px;
+      border: none;
+      border-radius: 80px;
+      display: block;
+      cursor: pointer;
+      margin-left: auto;
+      margin-right: auto;
+      transition: all 0.3s;
+      font-family: "Futura PT", sans-serif;
+
+      &:hover {
+        scale: 1.05;
+        -webkit-box-shadow: rgba(241, 236, 229, 0.3960784314) 0px 0px 10px 0px;
+        box-shadow: rgba(241, 236, 229, 0.3960784314) 0px 0px 10px 0px;
+      }
+    }
+
+
+    .icon {
+      width: 115px;
+      height: 115px;
+      margin: 40px 0;
     }
 
     form {
       margin-top: 5px;
       width: 600px;
       height: 420px;
-      h2 {
-        width: 100%;
-        text-align: center;
-        font-size: 36px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 110%;
-        margin: 0 0 25px 0;
-      }
-
-      p {
-        color: #FFE093;
-        text-align: center;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 110%; /* 26.4px */
-      }
-
-      a {
-        color: #FFE093;
-        text-decoration: underline;
-      }
-
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
         input {
-          border: 4px solid #FBD77D;
+          border: 3px solid #FBD77D;
           border-radius: 15px;
           margin: 0 0 25px 0;
           padding: 15px 20px;
@@ -123,6 +163,220 @@
           }
 
         }
+    }
+  }
+}
+@media (min-width: 960px) and (max-width: 1299px) {
+  .modal {
+    .modal-content {
+      margin: 140px auto;
+      padding: 50px;
+      width: 760px;
+      height: 520px;
+
+      p {
+        color: #FFE093;
+        font-size: 18px;
+        line-height: 110%;
+      }
+
+      .description {
+        font-size: 24px;
+      }
+
+      .icon {
+        width: 115px;
+        height: 115px;
+        margin: 40px 0;
+      }
+
+      input {
+        font-size: 18px;
+
+        .success,
+        .error {
+          transition: opacity 0.3s ease-in-out;
+          position: absolute;
+          margin-top: 75px;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 560px) and (max-width: 959px) {
+  .modal {
+    .modal-content {
+      margin: 140px auto;
+      padding: 50px;
+      width: 360px;
+      height: 520px;
+
+      p {
+        color: #FFE093;
+        font-size: 16px;
+        line-height: 110%;
+      }
+
+      .description {
+        font-size: 16px;
+        margin-bottom:30px ;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      form {
+        margin-top: 20px;
+        width: 350px;
+        height: 420px;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+        input {
+          border: 3px solid #FBD77D;
+          border-radius: 15px;
+          margin: 0 0 20px 0;
+          padding: 10px 15px;
+          width: 314px;
+          color: #FBD77D;
+          background-color: rgba(0, 0, 0, 0);
+          font-family: "Futura PT", sans-serif;
+          font-size:16px;
+          &.name-field {
+            width: 314px;
+            margin-bottom: 20px;
+          }
+          &.first {
+            margin-right: 0px;
+          }
+          &.button-submit {
+            padding: 15px 40px;
+            background-color: #DCB354;
+            color: #FFF9F1;
+            font-size: 16px;
+            line-height: 96%;
+            width: 250px;
+          }
+        }
+      }
+
+      .icon {
+        width: 115px;
+        height: 115px;
+        margin: 40px 0;
+      }
+
+      .success,
+      .error {
+        transition: opacity 0.3s ease-in-out;
+        position: absolute;
+        margin-top: 80px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+@media (min-width: 320px) and (max-width: 559px) {
+  .modal {
+    .modal-content {
+      margin: 140px auto;
+      padding: 20px;
+      width: calc(100% - 100px);
+      height: auto;
+
+      p {
+        color: #FFE093;
+        font-size: 16px;
+        line-height: 110%;
+      }
+
+      .description {
+        font-size: 16px;
+        margin-bottom:15px ;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin: 0 0 15px 0;
+      }
+      .close {
+        font-size: 70px;
+        cursor: pointer;
+        text-align: right;
+        width: 100%;
+        height: 50px;
+        line-height: 50%;
+      }
+
+      form {
+        margin-top: 5px;
+        width: calc(100% - 40px);
+        height: auto;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+        input {
+          border: 3px solid #FBD77D;
+          border-radius: 15px;
+          margin: 0 0 15px 0;
+          padding: 7px 10px;
+          width: calc(100% - 20px);
+          color: #FBD77D;
+          background-color: rgba(0, 0, 0, 0);
+          font-family: "Futura PT", sans-serif;
+          font-size:16px;
+          &.name-field {
+            width: calc(100% - 20px);
+            margin-bottom: 20px;
+          }
+          &.first {
+            margin-right: 0px;
+          }
+          &.button-submit {
+            padding: 10px 40px;
+            background-color: #DCB354;
+            color: #FFF9F1;
+            font-size: 16px;
+            line-height: 96%;
+            width: 190px;
+          }
+        }
+      }
+
+      .again {
+        padding: 10px 40px;
+        background-color: #DCB354;
+        color: #FFF9F1;
+        font-size: 16px;
+        line-height: 96%;
+        width: 190px;
+
+
+      }
+
+      .icon {
+        width: 100px;
+        height: 100px;
+        margin: 40px 0;
+      }
+
+      .success,
+      .error {
+        transition: opacity 0.3s ease-in-out;
+        position: relative;
+        margin-top: 20px;
+        height: auto;
+        width: calc(100% - 40px);
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
     }
   }
 }

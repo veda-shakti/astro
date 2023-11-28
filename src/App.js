@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import * as Frames from "./components/Frames/frames";
 import BackgroundBox from "./components/background-box";
 import Meta from "./components/Meta";
 import ContactFormPay from "./components/FormPay/ContactFormPay";
-import ModalContext from './components/FormPay/ModalContext';
+import ModalContext from "./components/FormPay/ModalContext";
 
 function App() {
     const [showModal, setShowModal] = useState(false);
@@ -39,7 +39,10 @@ function App() {
             // e.preventDefault();
         }
 
-        function scrollwheel(e) {
+        function scrollwheel(e){
+            if (document.querySelector('.modal')) {;
+                return;
+            }
             // e.preventDefault();
             const direction = e.deltaY > 0 ? 'up' : 'down';
             handleScroll(direction);
@@ -105,10 +108,6 @@ function App() {
             const scroll = currentFrame.querySelector('.scrolldiv');
             const block = currentFrame.querySelector('.contentblock');
             const container = currentFrame.parentElement.parentElement;
-            console.log(scroll.scrollTop);
-            console.log(scroll.scrollHeight);
-            console.log( container.offsetHeight);
-            console.log( block.offsetHeight);
 
             if ((scroll.scrollHeight >= container.offsetHeight && block.offsetHeight > 500) && (container.offsetHeight !== 0)) {
                 if (animating)
