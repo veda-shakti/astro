@@ -5,7 +5,7 @@ const ContentFeedBack = (props) => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        // URL к вашему API-сниппету в MODX
+
         const apiURL = 'https://godovoy-astroprognoz.anastasiyashakti.com/index.php?id=4';
 
         fetch(apiURL)
@@ -23,9 +23,6 @@ const ContentFeedBack = (props) => {
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
-    }, []);
-
-    useEffect(() => {
 
         function calculateColumnHeight(column) {
             return Array.from(column.children).reduce((acc, child) => acc + child.getBoundingClientRect().height, 0);
