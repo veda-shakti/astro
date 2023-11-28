@@ -264,15 +264,43 @@ function App()
         fetchData();
     }, []);
 
-    const fetchData = async () => {
-        try {
-            // Запрос к API или другая асинхронная операция
+    // const fetchData = async () => {
+    //     try {
+    //         const apiCallPromise = fetchSomeData(); // Это ваш API запрос
+    //         const imagesLoadedPromise = loadImages(); // Функция загрузки изображений
+    
+    //         // Ожидание завершения всех промисов
+    //         await Promise.all([apiCallPromise, imagesLoadedPromise]);
+    
+    //         // Когда все операции завершены, убираем Loader
+    //         setIsLoading(false);
+    //     } catch (error) {
+    //         console.error('Ошибка при загрузке данных', error);
+    //         setIsLoading(false);
+    //     }
+    // };
+
+    const fetchData = () => {
+        // Установить обработчик для события 'load', чтобы убедиться, что все ресурсы загружены
+        window.onload = () => {
             setIsLoading(false);
-        } catch (error) {
-            console.error('Ошибка при загрузке данных', error);
-            setIsLoading(false);
-        }
-    };
+        };
+    };    
+    
+    // const loadImages = () => {
+    //     const images = document.querySelectorAll('img');
+    //     const imageLoadPromises = Array.from(images).map(img => {
+    //         if (img.complete && img.naturalHeight !== 0)
+    //             return Promise.resolve();
+                
+    //         return new Promise((resolve, reject) => {
+    //             img.onload = resolve;
+    //             img.onerror = reject;
+    //         });
+    //     });
+    
+    //     return Promise.all(imageLoadPromises);
+    // };    
 
     if (isLoading)
         return <Loader />;
