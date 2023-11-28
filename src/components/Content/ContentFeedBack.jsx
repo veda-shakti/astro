@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import '../../Styles/contentFeedBack.css'
 import '../../Styles/content.css'
+
 const ContentFeedBack = (props) => {
     // const [reviews, setReviews] = useState([]);
 
