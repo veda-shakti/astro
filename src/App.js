@@ -40,9 +40,7 @@ function App() {
         }
 
         function scrollwheel(e){
-            if (document.querySelector('.modal')) {
-                return;
-            }
+
             // e.preventDefault();
             const direction = e.deltaY > 0 ? 'up' : 'down';
             handleScroll(direction);
@@ -103,7 +101,9 @@ function App() {
         }
         function handleScroll(direction) {
             // Определение направления прокрутки
-
+            if (document.querySelector('.modal')) {
+                return;
+            }
 
             const scroll = currentFrame.querySelector('.scrolldiv');
             const block = currentFrame.querySelector('.contentblock');
