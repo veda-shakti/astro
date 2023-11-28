@@ -40,6 +40,7 @@ const ContentFeedBack = (props) => {
                             <div className="column" id="column1"></div>
                             <div className="column" id="column2"></div>
                         </div>
+                        [[!getResources? &parents=`1` &tpl=`feedback` &limit=`9999` &includeTVs=`1` &processTVs=`1`]]
                         <div className="frame13_content_block">
                             <h5 className="frame13_content_block_name">
                                 Александра
