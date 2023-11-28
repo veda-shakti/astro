@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import '../../Styles/contentFeedBack.css'
 import '../../Styles/content.css'
 const ContentFeedBack = (props) => {
-    const [reviews, setReviews] = useState([]);
+    // const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
         // const apiURL = 'https://godovoy-astroprognoz.anastasiyashakti.com/index.php?id=4';
