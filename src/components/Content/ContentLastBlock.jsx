@@ -25,7 +25,7 @@ const ContentLastBlock = (props) => {
                         <button onClick={() => setShowModal(true)} className="lastblock_reg">Зарегистрироваться</button>
                         <p className="lastblock_ps">
                             *При оплате с других стран -  конвертация валюты проходит  автоматически по актуальному курсу НБУ <br/>
-                            **При возникновении трудностей с оплатой обращайтесь на почту <a>anastasiyashakti@gmail.com</a>
+                            **При возникновении трудностей с оплатой обращайтесь на почту <a href='mailto:anastasiyashakti@gmail.com'>anastasiyashakti@gmail.com</a>
                         </p>
                     </div>
 

@@ -48,7 +48,7 @@ const ContactFormPay = () => {
 
         // Очистка таймера при размонтировании компонента
         return () => clearTimeout(timeoutId);
-    }, [showModal, addNodal]);
+    }, [showModal, setShowModal, addNodal]);
 
     return (
         <div>
