@@ -1,8 +1,28 @@
 import React, {useEffect} from 'react';
 import '../../Styles/contentFeedBack.css'
 import '../../Styles/content.css'
+
 const ContentFeedBack = (props) => {
+    // const [reviews, setReviews] = useState([]);
+
     useEffect(() => {
+        // const apiURL = 'https://godovoy-astroprognoz.anastasiyashakti.com/index.php?id=4';
+
+        // fetch(apiURL)
+        //     .then(response => {
+        //         // Проверяем, что ответ успешный
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         return response.json();
+        //     })
+        //     .then(data => {
+        //         // Устанавливаем полученные данные в состояние компонента
+        //         setReviews(data);
+        //     })
+        //     .catch(error => {
+        //         console.error('Error fetching data:', error);
+        //     });
 
         function calculateColumnHeight(column) {
             return Array.from(column.children).reduce((acc, child) => acc + child.getBoundingClientRect().height, 0);
@@ -40,7 +60,12 @@ const ContentFeedBack = (props) => {
                             <div className="column" id="column1"></div>
                             <div className="column" id="column2"></div>
                         </div>
-                        [[!getResources? &parents=`1` &tpl=`feedback` &limit=`9999` &includeTVs=`1` &processTVs=`1`]]
+                        {/* {reviews.map(review => (
+                            <div key={review.id} className="review">
+                                <h5>{review.title}</h5>
+                                <p>{review.content}</p>
+                            </div>
+                        ))} */}
                         <div className="frame13_content_block">
                             <h5 className="frame13_content_block_name">
                                 Александра
@@ -207,7 +232,6 @@ const ContentFeedBack = (props) => {
                                 ага ‚ там то, там то и можно
                                 планирование небольшое начать
                                 создавать
-
                             </p>
                         </div>
                     </div>
