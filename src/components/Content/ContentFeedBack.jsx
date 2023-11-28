@@ -5,7 +5,6 @@ const ContentFeedBack = (props) => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-
         const apiURL = 'https://godovoy-astroprognoz.anastasiyashakti.com/index.php?id=4';
 
         fetch(apiURL)
