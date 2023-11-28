@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState} from 'react';
 import * as Frames from "./components/Frames/frames";
 import BackgroundBox from "./components/background-box";
 import Meta from "./components/Meta";
@@ -10,7 +10,10 @@ function App() {
     const [currentFrame, setCurrentFrame] = useState(null);
     const [animating, setAnimating] = useState(false);
     const [currentFrameIndex=0, setCurrentFrameIndex] = useState(0);
-    const shouldSwitchRef = useRef(true);
+    let shouldswitch = true;
+
+
+
 
     useEffect(() => {
         const frames = document.querySelectorAll('.content');
@@ -65,7 +68,7 @@ function App() {
             });
         }
         function switchFrame(direction) {
-            if (shouldSwitchRef.current) {
+            if (shouldswitch) {
 
                 // Определение следующего кадра в зависимости от направления прокрутки
                 let nextFrameIndex;
@@ -136,15 +139,15 @@ function App() {
                     ||
                     (direction === 'down' && scroll.scrollTop === 0)
                 ) {
-                    if (!shouldSwitchRef.current){
+                    if (!shouldswitch){
                         setTimeout(() => {
-                            shouldSwitchRef.current = true;
+                            shouldswitch = true;
                         }, 200);
                     }
                     switchFrame(direction);
                 }
-                if (shouldSwitchRef.current) {
-                    shouldSwitchRef.current = false;
+                if (shouldswitch) {
+                    shouldswitch = false;
                 }
 
             } else {
@@ -158,15 +161,15 @@ function App() {
                         (direction === 'down' && scroll.scrollLeft === 0)
                     )
                     {
-                        if (!shouldSwitchRef.current){
+                        if (!shouldswitch){
                             setTimeout(() => {
-                                shouldSwitchRef.current = true;
+                                shouldswitch = true;
                             }, 300);
                         }
                         switchFrame(direction);
                     }
-                    if (shouldSwitchRef.current) {
-                        shouldSwitchRef.current = false;
+                    if (shouldswitch) {
+                            shouldswitch = false;
                         }
 
                 }
