@@ -41,7 +41,11 @@
       text-align: right;
       width: 100%;
       height: 50px;
-      line-height: 50%; }
+      line-height: 50%;
+      transition: 0.2s ease-in-out; }
+      .modal .modal-content .close:hover {
+        text-shadow: 0 6px 6px black;
+        transform: translateY(-6px); }
     .modal .modal-content h2 {
       width: 100%;
       text-align: center;

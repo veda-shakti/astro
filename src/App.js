@@ -10,12 +10,12 @@ function App() {
     const [currentFrame, setCurrentFrame] = useState(null);
     const [animating, setAnimating] = useState(false);
     const [currentFrameIndex=0, setCurrentFrameIndex] = useState(0);
-    let shouldswitch = true;
 
 
 
 
     useEffect(() => {
+        let shouldswitch = true;
         const frames = document.querySelectorAll('.content');
         setCurrentFrame(frames[currentFrameIndex]);
 
@@ -40,7 +40,7 @@ function App() {
         }
 
         function scrollwheel(e){
-            if (document.querySelector('.modal')) {;
+            if (document.querySelector('.modal')) {
                 return;
             }
             // e.preventDefault();
@@ -200,10 +200,10 @@ function App() {
 
             if (isPhone1) {
                 if (index === 1 && direction === "up") {
-                    switchFrames(document.getElementById('frame2'), document.getElementById('frame1'), direction);
+                    await switchFrames(document.getElementById('frame2'), document.getElementById('frame1'), direction);
                 }
             } else {
-                switchFrames(document.getElementById('frame1'), document.getElementById('frame2'), direction)
+                await switchFrames(document.getElementById('frame1'), document.getElementById('frame2'), direction)
             }
 
             if (isMoney) {
@@ -215,18 +215,18 @@ function App() {
             if (isFullWidth) {
                 document.getElementById('box1').classList.add('fullwidthbg');
                 if (direction === "up") {
-                    switchFrames(document.getElementById('frame3'), document.getElementById('frame2'), direction);
+                    await switchFrames(document.getElementById('frame3'), document.getElementById('frame2'), direction);
                 } else {
-                    switchFrames(document.getElementById('frame3'), document.getElementById('frame4'), direction);
+                    await switchFrames(document.getElementById('frame3'), document.getElementById('frame4'), direction);
                 }
             }
             else {
                 document.getElementById('box1').classList.remove('fullwidthbg');
                 if (direction === 'down' && index === 6) {
-                    switchFrames(document.getElementById('frame2'), document.getElementById('frame3'), direction)
+                    await switchFrames(document.getElementById('frame2'), document.getElementById('frame3'), direction)
                 }
                 if (isPhone2) {
-                    switchFrames(document.getElementById('frame4'), document.getElementById('frame3'), direction)
+                    await switchFrames(document.getElementById('frame4'), document.getElementById('frame3'), direction)
                 }
             }
             if (lastframe) {
@@ -242,8 +242,6 @@ function App() {
                 document.getElementById('footer').style.opacity = '0';
                 document.getElementById('footer').style.transform = `translateY(100vh)`;
             }
-
-
         }
 
         window.addEventListener('wheel', scrollwheel);
