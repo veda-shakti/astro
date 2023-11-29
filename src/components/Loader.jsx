@@ -5,6 +5,21 @@ const Loader = () => {
   return (
     <div id="loader_background">
         <div id="load">
+            <div>Я</div>
+            <div>Н</div>
+            <div>Н</div>
+            <div>Е</div>
+            <div>Ж</div>
+            <div>А</div>
+            <div>Т</div>
+            <div>Н</div>
+            <div>А</div>
+            <div>В</div>
+            <div>А</div>
+            <div>З</div>
+            <div> </div>
+            <div> </div>
+            <div> </div>
             <div>А</div>
             <div>К</div>
             <div>З</div>
