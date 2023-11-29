@@ -30,10 +30,10 @@ function App()
             // Вычисление направления свайпа
             const touchEndY = e.changedTouches[0].clientY;
             const yDiff = this.touchStartY - touchEndY;
-                if (yDiff > 40)
+                if (yDiff > 25)
                     /* свайп вверх */
                     handleScroll('up');
-                if (yDiff < -40)
+                if (yDiff < -25)
                     /* свайп вниз */
                     handleScroll('down');
         }

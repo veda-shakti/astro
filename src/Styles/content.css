@@ -303,6 +303,7 @@
         width: 100%;
         height: 100%;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
     .content.introphone .frame2_block .frame2_block_time {
         font-size: 24px;
