@@ -33,6 +33,8 @@ jobs:
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
           🚨 1/2. Сборка провалена!
+          ${{ if eq(github.actor, 'IvanGudyushkin') }}@Ivanandreevichgud, иди убирай какахи!${{ endif }}
+          ${{ if eq(github.actor, 'AlexUner') }}@AlexUner, иди убирай какахи!${{ endif }}
           Пожалуйста, проверьте логи сборки в репозитории.
           Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
@@ -44,6 +46,8 @@ jobs:
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
           ✅ 1/2. Сборка успешно завершена!
+          ${{ if eq(github.actor, 'IvanGudyushkin') }}@Ivanandreevichgud, молодец!${{ endif }}
+          ${{ if eq(github.actor, 'AlexUner') }}@AlexUner, молодец!${{ endif }}
           Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
   deploy:
@@ -86,6 +90,7 @@ jobs:
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
           🚨 2/2. Развёртывание не удалось!
+          ${{ if eq(github.actor, 'AlexUner') }}@AlexUner, бегом на палубу!${{ endif }}
           Пожалуйста, проверьте логи сборки в репозитории.
           Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
