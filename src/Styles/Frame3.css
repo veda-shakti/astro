@@ -5,6 +5,7 @@
   left: 0;
   right: 0;
 }
+
 .content.PhoneMainInfo .frame3_block {
   opacity: 1;
   width: 982px;
@@ -19,14 +20,17 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .content.PhoneMainInfo .frame3_block_h4 {
   font-family: "Futura PT", sans-serif;
   text-align: center;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
-  line-height: 110%; /* 44px */
+  line-height: 110%;
+  /* 44px */
 }
+
 .content.PhoneMainInfo .frame3_block_h2 {
   font-family: "Futura PT", sans-serif;
   font-size: 64px;
@@ -36,6 +40,7 @@
   position: relative;
   margin: 0 0 20px 0;
 }
+
 .content.PhoneMainInfo .frame3_block_p {
   font-family: "Futura PT", sans-serif;
   font-size: 32px;
@@ -47,10 +52,12 @@
   margin: 0;
   width: 915px;
 }
+
 .content.PhoneMainInfo .frame3_block_p span {
   font-size: 24px;
   line-height: 27.6px;
 }
+
 .content.PhoneMainInfo .frame3_block_h3 {
   font-family: "Futura PT", sans-serif;
   font-size: 36px;
@@ -71,7 +78,8 @@
   .content.PhoneMainInfo .frame3_block_h4 {
     font-size: 36px;
     font-weight: 700;
-    line-height: 110%; /* 44px */
+    line-height: 110%;
+    /* 44px */
   }
   .content.PhoneMainInfo .frame3_block_h2 {
     font-size: 36px;
@@ -113,7 +121,8 @@
   .content.PhoneMainInfo .frame3_block_h4 {
     font-size: 24px;
     font-weight: 700;
-    line-height: 110%; /* 44px */
+    line-height: 110%;
+    /* 44px */
     width: 460px;
   }
   .content.PhoneMainInfo .frame3_block_h2 {
@@ -160,7 +169,8 @@
   .content.PhoneMainInfo .frame3_block_h4 {
     font-size: 24px;
     font-weight: 700;
-    line-height: 110%; /* 44px */
+    line-height: 110%;
+    /* 44px */
     width: 240px;
   }
   .content.PhoneMainInfo .frame3_block_h2 {
@@ -194,5 +204,6 @@
     margin-bottom: 10px;
   }
 }
+
 
 /*# sourceMappingURL=Frame3.css.map */

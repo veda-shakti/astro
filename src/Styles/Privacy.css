@@ -7,37 +7,43 @@
   color: #181818;
   padding: 40px;
   border-radius: 25px 25px 0px 0px;
-  overflow-y: auto;
+  overflow-y: hidden;
   scrollbar-width: none;
   display: flex;
   flex-direction: column;
   -ms-overflow-style: none;
-  transform: translateY(100%);
+  transform: translateY(100vh);
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
+
 .privacy.visible {
-  transform: translateY(0);
+  transform: translateY(50vh);
   opacity: 1;
 }
+
 .privacy::-webkit-scrollbar {
   display: none;
 }
+
 .privacy p {
   width: 100%;
   font-size: 16px;
   line-height: 110%;
   margin: 0 0 15px 0;
 }
+
 .privacy h2 {
   text-align: center;
   font-size: 36px;
   margin: 0 0 25px 0;
   line-height: 110%;
 }
+
 .privacy h3 {
   margin: 0 0 20px 0;
 }
+
 .privacy .close {
   font-size: 100px;
   cursor: pointer;
@@ -46,6 +52,7 @@
   line-height: 50%;
   transition: 0.2s ease-in-out;
 }
+
 .privacy .close:hover {
   text-shadow: 0 3px 3px black;
   transform: translateY(-6px);
@@ -67,5 +74,6 @@
     line-height: 110%;
   }
 }
+
 
 /*# sourceMappingURL=Privacy.css.map */
