@@ -9,22 +9,18 @@
   pointer-events: none;
   font-family: "Futura PT", sans-serif;
 }
-
 .lastblock .lastblock_ps {
   font-size: 20px;
   margin: 0;
   line-height: 110%;
 }
-
 .lastblock .lastblock_ps a {
   color: #FFE093;
   text-decoration: none;
 }
-
 .lastblock .lastblock_ps a:hover {
   text-decoration: underline;
 }
-
 .lastblock .lastblock_info {
   width: 915px;
   height: 250px;
@@ -39,11 +35,9 @@
   justify-content: center;
   align-items: center;
 }
-
 .lastblock .lastblock_info .lastblock_img {
   display: none;
 }
-
 .lastblock .lastblock_info .lastblock_h2 {
   font-size: 48px;
   font-style: normal;
@@ -53,7 +47,6 @@
   margin: 0 0 20px 0;
   text-align: center;
 }
-
 .lastblock .lastblock_info .lastblock_p {
   font-size: 36px;
   font-style: normal;
@@ -65,7 +58,6 @@
   margin-bottom: 40px;
   text-align: center;
 }
-
 .lastblock .lastblock_info .lastblock_reg {
   font-family: "Futura PT", sans-serif;
   bottom: 0;
@@ -86,7 +78,6 @@
   color: #FFF9F1;
   background-color: #DCB354;
 }
-
 .lastblock .lastblock_info .lastblock_reg:hover {
   scale: 1.05;
   -webkit-box-shadow: rgba(241, 236, 229, 0.3960784314) 0px 0px 10px 0px;
@@ -265,6 +256,5 @@
     font-size: 16px;
   }
 }
-
 
 /*# sourceMappingURL=ContentLastBlock.css.map */

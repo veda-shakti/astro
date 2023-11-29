@@ -25,6 +25,20 @@ jobs:
         name: build
         path: build/
 
+    - name: Set custom message bad
+      run: |
+        if [ "${{ github.actor }}" = "IvanGudyushkin" ]; then
+          echo "CUSTOM_MESSAGE_BAD=💩 @Ivanandreevichgud, иди убирай какахи!" >> $GITHUB_ENV
+        if [ "${{ github.actor }}" = "IvanGudyushkin" ]; then
+          echo "CUSTOM_MESSAGE_BAD=💩 @AlexUner, иди убирай какахи!" >> $GITHUB_ENV
+
+    - name: Set custom message good
+      run: |
+        if [ "${{ github.actor }}" = "IvanGudyushkin" ]; then
+          echo "CUSTOM_MESSAGE_GOOD=🏆 @Ivanandreevichgud, молодец!" >> $GITHUB_ENV
+        if [ "${{ github.actor }}" = "IvanGudyushkin" ]; then
+          echo "CUSTOM_MESSAGE_GOOD=🏆 @AlexUner, молодец!" >> $GITHUB_ENV
+
     - name: Send Telegram Notification on Failure build
       if: failure()
       uses: appleboy/telegram-action@master
@@ -33,8 +47,7 @@ jobs:
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
           🚨 1/2. Сборка провалена!
-          ${{ if eq(github.actor, 'IvanGudyushkin') }}@Ivanandreevichgud, иди убирай какахи!${{ endif }}
-          ${{ if eq(github.actor, 'AlexUner') }}@AlexUner, иди убирай какахи!${{ endif }}
+          ${{ env.CUSTOM_MESSAGE_BAD }}
           Пожалуйста, проверьте логи сборки в репозитории.
           Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
@@ -46,8 +59,7 @@ jobs:
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
           ✅ 1/2. Сборка успешно завершена!
-          ${{ if eq(github.actor, 'IvanGudyushkin') }}@Ivanandreevichgud, молодец!${{ endif }}
-          ${{ if eq(github.actor, 'AlexUner') }}@AlexUner, молодец!${{ endif }}
+          ${{ env.CUSTOM_MESSAGE_GOOD }}
           Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
   deploy:
@@ -90,7 +102,7 @@ jobs:
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
           🚨 2/2. Развёртывание не удалось!
-          ${{ if eq(github.actor, 'AlexUner') }}@AlexUner, бегом на палубу!${{ endif }}
+          ${{ env.CUSTOM_MESSAGE_BAD }}
           Пожалуйста, проверьте логи сборки в репозитории.
           Подробности сборки можно посмотреть здесь: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
