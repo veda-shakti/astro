@@ -19,7 +19,7 @@
   },
   "scripts": {
     "scss": "sass --watch src/Styles/scss:src/Styles",
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "concurrently \"react-scripts --openssl-legacy-provider start\" \"npm run scss\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
     "sass": "^1.69.5"
   }
 }

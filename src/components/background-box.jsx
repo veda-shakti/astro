@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/background.css';
-import {FacebookPixel, YandexMetrica} from "./Included/Metrics";
+// import {FacebookPixel, YandexMetrica} from "./Included/Metrics";
 
 const BackgroundBox = (props) => {
     return (
@@ -14,8 +14,8 @@ const BackgroundBox = (props) => {
                 <div className="column column2">
                     <a href="https://www.instagram.com/p/CWn2xYYscg_/">@ANASTASIASHAKTI</a>
                 </div>
-                <YandexMetrica/>
-                <FacebookPixel/>
+                {/* <YandexMetrica/>
+                <FacebookPixel/> */}
             </footer>
         </div>
     );
