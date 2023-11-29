@@ -255,14 +255,16 @@ function App()
         window.addEventListener('touchmove', handleTouchMove);
 
         window.addEventListener('load', () => {
-            // Начать анимацию исчезновения после загрузки страницы
             setStartFadeOut(true);
       
-            // Удалить `Loader` из DOM после завершения анимации
             setTimeout(() => {
               setIsLoading(false);
-            }, 1000); // Синхронизация с продолжительностью анимации
+            }, 1000);
         });
+
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 3500);
 
         return () => {
             window.removeEventListener('wheel', scrollwheel);
