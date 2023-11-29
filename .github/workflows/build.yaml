@@ -16,6 +16,12 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Install SASS
+      run: npm install -g sass
+
+    - name: Compile SCSS to CSS
+      run: npm run scss
+
     - name: Build
       run: npm run build
 
@@ -30,7 +36,7 @@ jobs:
         if [ "${{ github.actor }}" = "IvanGudyushkin" ]; then
           echo "CUSTOM_MESSAGE_BAD=💩 @Ivanandreevichgud, иди убирай какахи!" >> $GITHUB_ENV
         fi
-        if [ "${{ github.actor }}" = "IvanGudyushkin" ]; then
+        if [ "${{ github.actor }}" = "AlexUner" ]; then
           echo "CUSTOM_MESSAGE_BAD=💩 @AlexUner, иди убирай какахи!" >> $GITHUB_ENV
         fi
 
@@ -39,7 +45,7 @@ jobs:
         if [ "${{ github.actor }}" = "IvanGudyushkin" ]; then
           echo "CUSTOM_MESSAGE_GOOD=🏆 @Ivanandreevichgud, молодец!" >> $GITHUB_ENV
         fi
-        if [ "${{ github.actor }}" = "IvanGudyushkin" ]; then
+        if [ "${{ github.actor }}" = "AlexUner" ]; then
           echo "CUSTOM_MESSAGE_GOOD=🏆 @AlexUner, молодец!" >> $GITHUB_ENV
         fi
 
