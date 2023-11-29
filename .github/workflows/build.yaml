@@ -104,6 +104,24 @@ jobs:
     - name: Clear MODX Cache
       run: curl https://godovoy-astroprognoz.anastasiyashakti.com/clear-cache-script.php?key=${{ secrets.CACHE_SECRET_KEY }}
 
+    - name: Set custom message bad
+      run: |
+        if [ "${{ github.actor }}" = "IvanGudyushkin" ]; then
+          echo "CUSTOM_MESSAGE_BAD=💩 @Ivanandreevichgud, иди убирай какахи!" >> $GITHUB_ENV
+        fi
+        if [ "${{ github.actor }}" = "AlexUner" ]; then
+          echo "CUSTOM_MESSAGE_BAD=💩 @AlexUner, иди убирай какахи!" >> $GITHUB_ENV
+        fi
+
+    - name: Set custom message good
+      run: |
+        if [ "${{ github.actor }}" = "IvanGudyushkin" ]; then
+          echo "CUSTOM_MESSAGE_GOOD=🏆 @Ivanandreevichgud, молодец!" >> $GITHUB_ENV
+        fi
+        if [ "${{ github.actor }}" = "AlexUner" ]; then
+          echo "CUSTOM_MESSAGE_GOOD=🏆 @AlexUner, молодец!" >> $GITHUB_ENV
+        fi
+
     - name: Send Telegram Notification on Deploy Success
       if: failure()
       uses: appleboy/telegram-action@master
