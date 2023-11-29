@@ -21,12 +21,12 @@ const ContactFormPay = () => {
     };
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         // console.log(formState);
         // Здесь вы можете обработать данные формы, например, отправить их на сервер
         setFormState({ name: '', secondName: '', email: '' });
         // setShowModal(false);
-        window.open('https://pay.fondy.eu/s/5cN5EO9El', '_blank');
+        // window.open('https://pay.fondy.eu/s/5cN5EO9El', '_blank');
         // setAddModal(1);
     };
 
@@ -58,9 +58,8 @@ const ContactFormPay = () => {
                 <div className={`modal ${showClass ? 'show' : ''}`}>
                     <div className="modal-content">
                         <span className="close" onClick={() => setShowModal(false)}>&times;</span>
-                        {/*<form onSubmit={handleSubmit} action="https://api.fondy.eu/api/checkout/redirect/" method="post">*/}
                         {(addNodal === 0 &&
-                        <form id="contactForm" onSubmit={handleSubmit}>
+                        <form id="contactForm" onSubmit={handleSubmit} action="https://api.fondy.eu/api/checkout/redirect/" method="post">
                             <h2>Форма регистрации</h2>
                             <p>После заполнения формы регистрации Вас переведёт на страницу оплаты. Далее Вам на почту придут инструкции и ссылка для подключении к чату в Telegram. Отправляя форму, вы соглашаетесь с <span className="showprivacy" onClick={() => setShowPrivacy(true)}>политикой конфиденциальности</span>.</p>
                                 <label>
