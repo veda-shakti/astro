@@ -58,16 +58,16 @@ const ContentFeedBack = (props) => {
                                     <div className="column" id="column1">
                                         {column1Reviews.map(review => (
                                             <div key={review.id} className="review">
-                                                <h5>{review.title}</h5>
-                                                <p>{review.content}</p>
+                                                <h5>{review.rev_name}</h5>
+                                                <p>{review.rev_text}</p>
                                             </div>
                                         ))}
                                     </div>
                                     <div className="column" id="column2">
                                         {column2Reviews.map(review => (
                                             <div key={review.id} className="review">
-                                                <h5>{review.title}</h5>
-                                                <p>{review.content}</p>
+                                                <h5>{review.rev_name}</h5>
+                                                <p>{review.rev_text}</p>
                                             </div>
                                         ))}
                                     </div>
