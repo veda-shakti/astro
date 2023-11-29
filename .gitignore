@@ -24,7 +24,5 @@ yarn-error.log*
 
 .idea
 .vscode
-/.sass-cache
-/Styles/scss/*.css
-/Styles/scss/*.map.css
-/Styles/.sass-cache
+src/**/.sass-cache
+src/Styles/scss/*.css

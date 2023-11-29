@@ -4,11 +4,12 @@ import BackgroundBox from "./components/background-box";
 import Meta from "./components/Meta";
 import ContactFormPay from "./components/FormPay/ContactFormPay";
 import ModalContext from "./components/FormPay/ModalContext";
-// import Loader from './components/Loader';
+import Loader from './components/Loader';
 
 function App()
 {
-    // const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
+    const [startFadeOut, setStartFadeOut] = useState(false);
 
     const [showModal, setShowModal] = useState(false);
     const [currentFrame, setCurrentFrame] = useState(null);
@@ -253,32 +254,28 @@ function App()
         window.addEventListener('touchstart', handleTouchStart);
         window.addEventListener('touchmove', handleTouchMove);
 
+        window.addEventListener('load', () => {
+            // Начать анимацию исчезновения после загрузки страницы
+            setStartFadeOut(true);
+      
+            // Удалить `Loader` из DOM после завершения анимации
+            setTimeout(() => {
+              setIsLoading(false);
+            }, 1000); // Синхронизация с продолжительностью анимации
+        });
+
         return () => {
             window.removeEventListener('wheel', scrollwheel);
             window.removeEventListener('touchstart', handleTouchStart);
             window.removeEventListener('touchmove', handleTouchMove);
         };
     }, [currentFrame, currentFrameIndex, animating]);
-
-    // useEffect(() => {
-    //     fetchData();
-    // }, []);
-
-    // const fetchData = () => {
-    //     if (document.readyState === "complete") {
-    //         setIsLoading(false);
-    //     } else {
-    //         window.onload = () => {
-    //             setIsLoading(false);
-    //         };
-    //     }
-    // };       
-
-    // if (isLoading)
-    //     return <Loader />;
-
+      
     return (
         <div className="App">
+            {isLoading && (
+                <Loader className={startFadeOut ? 'fadeOutUp' : ''} />
+            )}
             <ModalContext.Provider value={{ showModal, setShowModal }}>
                 <Meta/>
                 <BackgroundBox bg="cosmos">
