@@ -64,14 +64,13 @@ const ContactFormPay = () => {
                             <h2>Форма регистрации</h2>
                             <p>После заполнения формы регистрации Вас переведёт на страницу оплаты. Далее Вам на почту придут инструкции и ссылка для подключении к чату в Telegram. Отправляя форму, вы соглашаетесь с <span className="showprivacy" onClick={() => setShowPrivacy(true)}>политикой конфиденциальности</span>.</p>
                                 <label>
-                                    <input className="name-field first" type="text" name="name" placeholder="Имя" value={formState.name} onChange={handleInputChange}  />
+                                    <input className="name-field first" type="text" name="name" placeholder="Имя" value={formState.name} onChange={handleInputChange} required  />
                                 </label>
                                 <label>
-                                    <input className="name-field second" type="text" name="secondName" placeholder="Фамилия" value={formState.secondName} onChange={handleInputChange}  />
+                                    <input className="name-field second" type="text" name="secondName" placeholder="Фамилия" value={formState.secondName} onChange={handleInputChange} required  />
                                 </label>
                             <label>
-                                {/*requied*/}
-                                <input type="email" name="email" placeholder="Почта*" value={formState.email} onChange={handleInputChange}  />
+                                <input type="email" name="email" placeholder="Почта*" value={formState.email} onChange={handleInputChange} required />
                             </label>
                             <input className="button-submit" type="submit" value="Перейти к оплате" />
                             {/*<input type="hidden" name="order_id" value="your_order_id" />*/}
