@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/background.css';
-import {FacebookPixel, YandexMetrica} from "./Included/Metrics";
+// import {FacebookPixel, YandexMetrica} from "./Included/Metrics";
 
 const BackgroundBox = (props) => {
     return (
