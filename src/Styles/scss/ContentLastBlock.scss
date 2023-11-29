@@ -76,7 +76,11 @@
       transition-duration: 0.3s;
       color: #FFF9F1;
       background-color:#DCB354;
-
+      &:hover {
+        scale: 1.05;
+        -webkit-box-shadow: rgba(241, 236, 229, 0.3960784314) 0px 0px 10px 0px;
+        box-shadow: rgba(241, 236, 229, 0.3960784314) 0px 0px 10px 0px;
+      }
     }
   }
 }

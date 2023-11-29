@@ -5,10 +5,12 @@
   font-family: "Futura PT", sans-serif;
   height: 100%;
 }
+
 .content.blockvebinar .contentblock {
   margin-top: 110px;
   height: auto;
 }
+
 .content.blockvebinar .vebinar_title {
   font-size: 64px;
   font-style: normal;
@@ -18,6 +20,7 @@
   position: relative;
   margin: 0 0 20px 0;
 }
+
 .content.blockvebinar .vebinar_info {
   font-size: 24px;
   font-style: normal;
@@ -29,6 +32,7 @@
   width: 915px;
   margin-bottom: 40px;
 }
+
 .content.blockvebinar .reg {
   position: relative;
   font-family: "Futura PT", sans-serif;
@@ -52,6 +56,13 @@
   color: #FFF9F1;
   background-color: #DCB354;
 }
+
+.content.blockvebinar .reg:hover {
+  scale: 1.05;
+  -webkit-box-shadow: rgba(241, 236, 229, 0.3960784314) 0px 0px 10px 0px;
+  box-shadow: rgba(241, 236, 229, 0.3960784314) 0px 0px 10px 0px;
+}
+
 .content.blockvebinar .vebinar_block {
   border-radius: 20px;
   background: linear-gradient(206deg, rgba(175, 59, 9, 0.2) 7.3%, rgba(251, 215, 125, 0.2) 30.76%, rgba(255, 236, 190, 0.2) 43.35%, rgba(251, 215, 125, 0.2) 59.94%, rgba(175, 59, 9, 0.2) 82.83%);
@@ -70,27 +81,32 @@
   font-size: 24px;
   line-height: 110%;
 }
+
 .content.blockvebinar .vebinar_block .vebinar_block_h3 {
   font-family: "Futura PT", sans-serif;
   text-align: center;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
-  line-height: 110%; /* 44px */
+  line-height: 110%;
+  /* 44px */
   margin: 0;
   margin-bottom: 5px;
 }
+
 .content.blockvebinar .vebinar_block .vebinar_block_description {
   font-size: 24px;
   line-height: 110%;
   text-align: center;
   margin: 0;
 }
+
 .content.blockvebinar .vebinar_block .vebinar_block_li {
   font-size: 24px;
   line-height: 110%;
   padding-bottom: 25px;
 }
+
 .content.blockvebinar .vebinar_block .vebinar_block_li:last-child {
   padding: 0;
   padding: 0;
@@ -211,7 +227,8 @@
     width: auto;
     font-style: normal;
     font-weight: 700;
-    line-height: 110%; /* 44px */
+    line-height: 110%;
+    /* 44px */
     margin-bottom: 10px;
   }
   .content.blockvebinar .vebinar_block .vebinar_block_description {
@@ -298,7 +315,8 @@
     width: 100%;
     font-style: normal;
     font-weight: 700;
-    line-height: 110%; /* 44px */
+    line-height: 110%;
+    /* 44px */
     margin-bottom: 10px;
   }
   .content.blockvebinar .vebinar_block .vebinar_block_description {
@@ -321,5 +339,6 @@
     padding: 0;
   }
 }
+
 
 /*# sourceMappingURL=ContentBlockVebinar.css.map */

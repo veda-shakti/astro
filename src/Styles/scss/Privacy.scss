@@ -7,16 +7,16 @@
   color:#181818 ;
   padding: 40px;
   border-radius: 25px 25px 0px 0px;
-  overflow-y: auto;
+  overflow-y: hidden;
   scrollbar-width: none;
   display: flex;
   flex-direction: column;
   -ms-overflow-style: none;
-  transform: translateY(100%);
+  transform: translateY(100vh);
   opacity: 0;
   transition: all 0.5s ease-in-out;
   &.visible {
-    transform: translateY(0);
+    transform: translateY(50vh);
     opacity: 1;
   }
 
