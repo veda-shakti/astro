@@ -1,12 +1,19 @@
 @charset "UTF-8";
 .modal {
-  position: fixed; /* Позиционирование фиксировано, чтобы оно всегда оставалось на месте, даже при прокрутке страницы */
-  top: 0; /* Отступ сверху равен 0, чтобы оно начиналось с верхнего края экрана */
-  left: 0; /* Отступ слева равен 0, чтобы оно начиналось с левого края экрана */
-  width: 100vw; /* Ширина равна 100%, чтобы оно занимало всю ширину экрана */
-  height: 100vh; /* Высота равна 100%, чтобы оно занимало всю высоту экрана */
-  overflow: hidden; /* Если содержимое модального окна превышает его размеры, появляется полоса прокрутки */
-  background-color: rgba(0, 0, 0, 0.4); /* Полупрозрачный черный фон */
+  position: fixed;
+  /* Позиционирование фиксировано, чтобы оно всегда оставалось на месте, даже при прокрутке страницы */
+  top: 0;
+  /* Отступ сверху равен 0, чтобы оно начиналось с верхнего края экрана */
+  left: 0;
+  /* Отступ слева равен 0, чтобы оно начиналось с левого края экрана */
+  width: 100vw;
+  /* Ширина равна 100%, чтобы оно занимало всю ширину экрана */
+  height: 100vh;
+  /* Высота равна 100%, чтобы оно занимало всю высоту экрана */
+  overflow: hidden;
+  /* Если содержимое модального окна превышает его размеры, появляется полоса прокрутки */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Полупрозрачный черный фон */
   color: #FFE093;
   z-index: 9999;
   opacity: 0;
@@ -14,17 +21,24 @@
   font-family: "Futura PT", sans-serif;
   line-height: 110%;
 }
+
 .modal.show {
   opacity: 1;
 }
+
 .modal .modal-content {
-  margin: auto; /* 15% от верхнего края экрана до модального окна и автоматические отступы по бокам */
-  position: fixed; /* Позиционирование относительно окна браузера */
-  top: 50%; /* Позиционирование от верхнего края окна браузера */
-  left: 50%; /* Позиционирование от левого края окна браузера */
+  margin: auto;
+  /* 15% от верхнего края экрана до модального окна и автоматические отступы по бокам */
+  position: fixed;
+  /* Позиционирование относительно окна браузера */
+  top: 50%;
+  /* Позиционирование от верхнего края окна браузера */
+  left: 50%;
+  /* Позиционирование от левого края окна браузера */
   transform: translate(-50%, -50%);
   padding: 50px;
-  width: 900px; /* Ширина модального окна равна 80% */
+  width: 900px;
+  /* Ширина модального окна равна 80% */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   height: 600px;
   display: flex;
@@ -33,6 +47,7 @@
   border-radius: 25px;
   background: linear-gradient(289deg, #01160F 2.69%, #326A4C 51.61%, #01160F 100%);
 }
+
 .modal .modal-content .close {
   font-size: 100px;
   cursor: pointer;
@@ -42,10 +57,12 @@
   line-height: 50%;
   transition: 0.2s ease-in-out;
 }
+
 .modal .modal-content .close:hover {
   text-shadow: 0 6px 6px black;
   transform: translateY(-6px);
 }
+
 .modal .modal-content h2 {
   width: 100%;
   text-align: center;
@@ -55,19 +72,23 @@
   line-height: 110%;
   margin: 0 0 25px 0;
 }
+
 .modal .modal-content p {
   color: #FFE093;
   text-align: center;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
-  line-height: 110%; /* 26.4px */
+  line-height: 110%;
+  /* 26.4px */
 }
+
 .modal .modal-content .showprivacy {
   color: #FFE093;
   text-decoration: underline;
   cursor: pointer;
 }
+
 .modal .modal-content .success,
 .modal .modal-content .error {
   transition: opacity 0.3s ease-in-out;
@@ -77,6 +98,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .modal .modal-content .again {
   padding: 20px 40px;
   background-color: #DCB354;
@@ -93,16 +115,19 @@
   transition: all 0.3s;
   font-family: "Futura PT", sans-serif;
 }
+
 .modal .modal-content .again:hover {
   scale: 1.05;
   -webkit-box-shadow: rgba(241, 236, 229, 0.3960784314) 0px 0px 10px 0px;
   box-shadow: rgba(241, 236, 229, 0.3960784314) 0px 0px 10px 0px;
 }
+
 .modal .modal-content .icon {
   width: 115px;
   height: 115px;
   margin: 40px 0;
 }
+
 .modal .modal-content form {
   margin-top: 5px;
   width: 600px;
@@ -110,6 +135,7 @@
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
 }
+
 .modal .modal-content form input {
   border: 3px solid #FBD77D;
   border-radius: 15px;
@@ -120,34 +146,46 @@
   background-color: rgba(0, 0, 0, 0);
   font-family: "Futura PT", sans-serif;
   font-size: 24px;
-  opacity: 0;
 }
-.modal .modal-content form input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+
+.modal .modal-content form input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
   color: rgba(255, 224, 147, 0.5019607843) !important;
   opacity: 1;
 }
-.modal .modal-content form input::-moz-placeholder { /* Firefox 19+ */
+
+.modal .modal-content form input::-moz-placeholder {
+  /* Firefox 19+ */
   color: rgba(255, 224, 147, 0.5019607843) !important;
   opacity: 1;
 }
-.modal .modal-content form input::-ms-input-placeholder { /* IE 10+ */
+
+.modal .modal-content form input::-ms-input-placeholder {
+  /* IE 10+ */
   color: rgba(255, 224, 147, 0.5019607843) !important;
   opacity: 1;
 }
-.modal .modal-content form input::-moz-placeholder { /* Firefox 18- */
+
+.modal .modal-content form input::-moz-placeholder {
+  /* Firefox 18- */
   color: rgba(255, 224, 147, 0.5019607843) !important;
   opacity: 1;
 }
-.modal .modal-content form input::placeholder { /* Most modern browsers support this now. */
+
+.modal .modal-content form input::placeholder {
+  /* Most modern browsers support this now. */
   color: rgba(255, 224, 147, 0.5019607843) !important;
 }
+
 .modal .modal-content form input.name-field {
   width: 242px;
   margin-bottom: 20px;
 }
+
 .modal .modal-content form input.first {
   margin-right: 20px;
 }
+
 .modal .modal-content form input.button-submit {
   padding: 20px 40px;
   background-color: #DCB354;
@@ -164,6 +202,7 @@
   transition: all 0.3s;
   opacity: 1;
 }
+
 .modal .modal-content form input.button-submit:hover {
   scale: 1.05;
   -webkit-box-shadow: rgba(241, 236, 229, 0.3960784314) 0px 0px 10px 0px;
@@ -357,5 +396,6 @@
     margin-bottom: 20px;
   }
 }
+
 
 /*# sourceMappingURL=ModalFornPay.css.map */

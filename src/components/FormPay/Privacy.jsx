@@ -63,6 +63,7 @@ const Privacy = ({ isVisible, setShowPrivacy }) => {
             <h2>Политика конфиденциальности</h2>
             <h3>1. Положение</h3>
             <p></p>
+
         </div>
     );
 };
