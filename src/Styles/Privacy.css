@@ -3,7 +3,7 @@
   bottom: 0;
   width: calc(100vw - 80px);
   background: #ECE8FF;
-  height: 50vh;
+  height: auto;
   color: #181818;
   padding: 40px;
   border-radius: 25px 25px 0px 0px;
