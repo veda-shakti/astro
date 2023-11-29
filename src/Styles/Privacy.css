@@ -1,5 +1,5 @@
 .privacy {
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: calc(100vw - 80px);
   background: #ECE8FF;
@@ -14,7 +14,7 @@
   -ms-overflow-style: none;
   transform: translateY(100%);
   opacity: 0;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .privacy.visible {
   transform: translateY(0);
