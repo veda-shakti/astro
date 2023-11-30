@@ -47,6 +47,9 @@
     background-clip: text;
     margin: 15px 75px;
 }
+.content.intro > span{
+    text-align: center;
+}
 .content.introphone {
     margin: 112px 130px;
     display: -webkit-box;
@@ -181,6 +184,7 @@
         font-size: 24px;
         font-style: normal;
         margin: 25px 25px;
+        width: calc(100% - 50px);
     }
     .content.introphone {
         width: 860px;

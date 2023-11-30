@@ -4,13 +4,14 @@ import BackgroundBox from "./components/background-box";
 import Meta from "./components/Meta";
 import ContactFormPay from "./components/FormPay/ContactFormPay";
 import ModalContext from "./components/FormPay/ModalContext";
+import LanguageContext from "./components/LanguageContext";
 import Loader from './components/Loader';
 
 function App()
 {
     const [isLoading, setIsLoading] = useState(true);
     const [startFadeOut, setStartFadeOut] = useState(false);
-
+    const [language, setLanguage] = useState('ru');
     const [showModal, setShowModal] = useState(false);
     const [currentFrame, setCurrentFrame] = useState(null);
     const [animating, setAnimating] = useState(false);
@@ -278,9 +279,15 @@ function App()
             {isLoading && (
                 <Loader className={startFadeOut ? 'fadeOutUp' : ''} />
             )}
+            <LanguageContext.Provider value={{ language, setLanguage }}>
             <ModalContext.Provider value={{ showModal, setShowModal }}>
                 <Meta/>
                 <BackgroundBox bg="cosmos">
+                    <select style={{ position: 'absolute', zIndex: 9999 }} onChange={(event) => setLanguage(event.target.value)}>
+                        <option value="ru">Русский</option>
+                        <option value="en">English</option>
+                        <option value="uk">Українська</option>
+                    </select>
                     <Frames.Frame1/>
                     <Frames.Frame2/>
                     <Frames.Frame3/>
@@ -291,6 +298,7 @@ function App()
                 </BackgroundBox>
                 <ContactFormPay />
             </ModalContext.Provider>
+            </LanguageContext.Provider>
         </div>
     );
 }
