@@ -283,11 +283,11 @@ function App()
             <ModalContext.Provider value={{ showModal, setShowModal }}>
                 <Meta/>
                 <BackgroundBox bg="cosmos">
-                    <select style={{ position: 'absolute', zIndex: 9999 }} onChange={(event) => setLanguage(event.target.value)}>
-                        <option value="ru">Русский</option>
-                        <option value="en">English</option>
-                        <option value="uk">Українська</option>
-                    </select>
+                    {/*<select style={{ position: 'absolute', zIndex: 9999 }} onChange={(event) => setLanguage(event.target.value)}>*/}
+                    {/*    <option value="ru">Русский</option>*/}
+                    {/*    <option value="en">English</option>*/}
+                    {/*    <option value="uk">Українська</option>*/}
+                    {/*</select>*/}
                     <Frames.Frame1/>
                     <Frames.Frame2/>
                     <Frames.Frame3/>
