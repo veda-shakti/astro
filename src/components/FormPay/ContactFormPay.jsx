@@ -94,7 +94,14 @@ const ContactFormPay = () => {
                         <span className="close" onClick={() => setShowModal(false)}>&times;</span>
                         <form id="contactForm" onSubmit={handleSubmit}>
                             <h2>Форма регистрации</h2>
-                            <p>После заполнения формы регистрации Вас переведёт на страницу оплаты. Далее Вам на почту придут инструкции и ссылка для подключения к чату в Telegram. Отправляя форму, вы соглашаетесь с <span className="showprivacy" onClick={() => setShowPrivacy(true)}>политикой конфиденциальности</span>.</p>
+                            {/* <p>
+                                После заполнения формы регистрации Вас переведёт на страницу оплаты. Далее Вам на почту 
+                                придут инструкции и ссылка для подключения к чату в Telegram. Отправляя форму, вы соглашаетесь 
+                                с <span className="showprivacy" onClick={() => setShowPrivacy(true)}>политикой конфиденциальности</span>.
+                            </p> */}
+                            <p>
+                                После оплаты Вам на почту придут инструкции и ссылка для подключения к чату в Telegram.
+                            </p>
                             <label>
                                 {/* <input className="name-field first" type="text" name="name" placeholder="Имя" value={formState.name} onChange={handleInputChange} required /> */}
                                 <input className="name-field first" type="hidden" name="name" placeholder="Имя" value={formState.name} onChange={handleInputChange} />
