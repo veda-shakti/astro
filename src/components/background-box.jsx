@@ -8,6 +8,9 @@ const BackgroundBox = (props) => {
     const openInstagram = () => {
         window.open("https://www.instagram.com/p/CWn2xYYscg_/", "_blank");
     };
+    const openTelegram = () => {
+        window.open("https://t.me/anastasiyashakti_astrolog", "_blank");
+    };
 
     return (
         <div className={`box ${props.bg}`} id={`box1`}>
@@ -16,7 +19,7 @@ const BackgroundBox = (props) => {
 
             <div className="SocialButtons">
                 <img alt="instagram" className="mediabutton" src= {insta} onClick={openInstagram} />
-                <img alt="telegram" className="mediabutton" src= {telegram} />
+                <img alt="telegram" className="mediabutton" src= {telegram} onClick={openTelegram} />
             </div>
 
             <footer id="footer">
