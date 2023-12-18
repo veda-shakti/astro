@@ -17,7 +17,7 @@ export const Frame2 = (props) => {
                     imgSrc={emblem}
                     time="02.12.2023"
                     title={<AdaptiveTag
-                        tag="span"
+                        tag="h1"
                         translations={{
                             en: 'Подробный Астропрогноз \n' +
                                 'на 2024 год',
@@ -26,16 +26,16 @@ export const Frame2 = (props) => {
                             uk: 'Подробный Астропрогноз \n' +
                                 'на 2024 год',
                         }}
-                        className=""
+                        className="frame2_block_h1"
                     />}
                     description={<AdaptiveTag
-                        tag="span"
+                        tag="p"
                         translations={{
                             en: 'Получите ключи к реализации планов во всех сферах жизни',
                             ru: 'Получите ключи к реализации планов во всех сферах жизни',
                             uk: 'Получите ключи к реализации планов во всех сферах жизни',
                         }}
-                        className=""
+                        className="frame2_block_p"
                     />}
                     buttonText={<AdaptiveTag
                         tag="button"
@@ -154,7 +154,7 @@ export const Frame2 = (props) => {
                                 uk: 'Защитить дом с помощью духовных техник и практик',
                             }}
                             className=""
-                        />,,
+                        />,
                         "Сделать свой дом местом силы для всей семьи",
                         "Получить видение года в объёмной картинке заранее",
                         "Знать, когда запланировать важные события",
