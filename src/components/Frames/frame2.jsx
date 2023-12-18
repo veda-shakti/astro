@@ -7,7 +7,7 @@ import '../../Styles/content.css'
 import Container from "../Container";
 import AdaptiveTag from "../Content/AdaptiveTag";
 import ModalContext from "../FormPay/ModalContext";
-export const Frame2 = (props) => {
+export const Frame2 = () => {
     const { setShowModal } = useContext(ModalContext);
     return (
         <div>
@@ -136,7 +136,7 @@ export const Frame2 = (props) => {
                                 uk: 'Прожить год спокойнее и стабильнее',
                             }}
                             className=""
-                        />,,
+                        />,
                         <AdaptiveTag
                             tag="span"
                             translations={{
@@ -145,7 +145,7 @@ export const Frame2 = (props) => {
                                 uk: 'Осуществить свои планы, цели и намерения на год c большей вероятностью',
                             }}
                             className=""
-                        />,,
+                        />,
                         <AdaptiveTag
                             tag="span"
                             translations={{

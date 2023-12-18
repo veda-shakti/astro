@@ -15,8 +15,8 @@ const BackgroundBox = (props) => {
 
 
             <div className="SocialButtons">
-                <img className="mediabutton" src= {insta} onClick={openInstagram} />
-                <img className="mediabutton" src= {telegram} />
+                <img alt="instagram" className="mediabutton" src= {insta} onClick={openInstagram} />
+                <img alt="telegram" className="mediabutton" src= {telegram} />
             </div>
 
             <footer id="footer">
