@@ -3,6 +3,7 @@
   position: absolute;
   left: 55px;
 }
+
 .content.PhoneBorderInfo .frame5_block {
   margin: auto;
   display: flex;
@@ -13,17 +14,20 @@
   transition-duration: 0.3s;
   color: #FBD77D;
 }
+
 .content.PhoneBorderInfo .frame5_block .frame5_block_h4 {
   text-align: center;
   font-family: "Futura PT", sans-serif;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
-  line-height: 110%; /* 38.088px */
+  line-height: 110%;
+  /* 38.088px */
   margin: 0;
   margin-top: 56px;
   margin-bottom: 50px;
 }
+
 .content.PhoneBorderInfo .frame5_block .frame5_block_list {
   display: flex;
   flex-wrap: wrap;
@@ -32,6 +36,7 @@
   margin-top: 0;
   justify-content: space-between;
 }
+
 .content.PhoneBorderInfo .frame5_block .border {
   background-image: url(../assets/gold-frame-border.svg);
   width: 400px;
@@ -41,6 +46,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .content.PhoneBorderInfo .frame5_block .frame5_block_h5 {
   color: #FBD77D;
   text-align: center;
@@ -48,12 +54,14 @@
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
-  line-height: 110%; /* 26.4px */
+  line-height: 110%;
+  /* 26.4px */
   position: relative;
   width: 350px;
   padding: 12.5px 40px;
   margin: 0;
 }
+
 .content.PhoneBorderInfo .frame5_block .frame5_block_h5::after {
   content: "";
   display: block;
@@ -71,6 +79,7 @@
   background-size: cover;
   background-position: center;
 }
+
 .content.PhoneBorderInfo .frame5_block .frame5_block_h5::before {
   width: 393px;
   height: 116px;
@@ -133,7 +142,8 @@
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
-    line-height: 110%; /* 38.088px */
+    line-height: 110%;
+    /* 38.088px */
     margin: 75px 0 0 0;
     margin-bottom: 30px;
   }
@@ -154,7 +164,8 @@
   .content.PhoneBorderInfo .frame5_block .frame5_block_h5 {
     color: #FBD77D;
     font-size: 20px;
-    line-height: 110%; /* 26.4px */
+    line-height: 110%;
+    /* 26.4px */
     width: 280px;
     height: auto;
     padding: 0px 35px;
@@ -184,40 +195,43 @@
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
-    line-height: 110%; /* 38.088px */
+    line-height: 110%;
+    /* 38.088px */
     margin: 140px 0 20px 0;
   }
   .content.PhoneBorderInfo .frame5_block .frame5_block_list {
     display: flex;
     flex-wrap: wrap;
-    width: 240px;
+    width: 290px;
     margin: auto;
     margin-top: 0;
     justify-content: space-between;
   }
   .content.PhoneBorderInfo .frame5_block .border {
     background-image: url(../assets/gold-frame-border-phone.svg);
-    width: 240px;
+    width: 290px;
     height: 90px;
     margin-bottom: 20px;
   }
   .content.PhoneBorderInfo .frame5_block .frame5_block_h5 {
     color: #FBD77D;
     font-size: 16px;
-    line-height: 110%; /* 26.4px */
+    line-height: 110%;
+    /* 26.4px */
     width: 210px;
     height: auto;
-    padding: 0px 15px;
+    padding: 0px 40px;
   }
   .content.PhoneBorderInfo .frame5_block .frame5_block_h5::after {
-    width: 240px;
+    width: 290px;
     height: 90px;
   }
   .content.PhoneBorderInfo .frame5_block .frame5_block_h5::before {
-    width: 240px;
+    width: 290px;
     height: 90px;
     border-radius: 25px;
   }
 }
+
 
 /*# sourceMappingURL=ContentPhoneBorderInfo.css.map */

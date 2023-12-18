@@ -39,13 +39,13 @@
 .content.intro {
     font-family: Futura PT, sans-serif;
     text-align: center;
-    font-size: 36px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: 110%;
     -webkit-background-clip: text;
     background-clip: text;
-    margin: 15px 75px;
+    margin: 15px 22px;
 }
 .content.intro > span{
     text-align: center;
@@ -183,8 +183,8 @@
     .content.intro  {
         font-size: 24px;
         font-style: normal;
-        margin: 25px 25px;
-        width: calc(100% - 50px);
+        margin: 25px 50px;
+        width: calc(100% - 100px);
     }
     .content.introphone {
         width: 860px;
@@ -384,7 +384,7 @@
 
 @media (min-width: 320px) and (max-width: 559px) {
     .content.intro  {
-        font-size: 18px;
+        font-size: 16px;
         font-style: normal;
         margin: 15px 15px;
     }

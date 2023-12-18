@@ -16,7 +16,7 @@ const ContentIntroPhone = (props) => {
                         <p className="frame2_block_time">{props.time}</p>
                         <h1 className="frame2_block_h1">{props.title}</h1>
                         <p className="frame2_block_p">{props.description}</p>
-                        <button onClick={() => setShowModal(true)}  className="reg">{props.buttonText}</button>
+                        {props.buttonText}
                         <div className="buttons">
                             {props.tags.map(tag =>
                                 <div className="buttons_child">{tag}</div>

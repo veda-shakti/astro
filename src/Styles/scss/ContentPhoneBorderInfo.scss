@@ -201,14 +201,14 @@
       .frame5_block_list {
         display: flex;
         flex-wrap: wrap;
-        width: 240px;
+        width: 290px;
         margin: auto;
         margin-top: 0;
         justify-content: space-between;
       }
       .border {
         background-image: url(../assets/gold-frame-border-phone.svg);
-        width:240px ;
+        width:290px ;
         height: 90px;
         margin-bottom: 20px;
 
@@ -219,13 +219,13 @@
         line-height: 110%; /* 26.4px */
         width: 210px;
         height: auto;
-        padding: 0px 15px;
+        padding: 0px 40px;
         &::after {
-          width: 240px;
+          width: 290px;
           height: 90px;
         }
         &::before {
-          width: 240px;
+          width: 290px;
           height: 90px;
           border-radius: 25px;
 
