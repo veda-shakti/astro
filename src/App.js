@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import * as Frames from "./components/Frames/frames";
 import BackgroundBox from "./components/background-box";
 import Meta from "./components/Meta";
@@ -16,6 +16,7 @@ function App()
     const [currentFrame, setCurrentFrame] = useState(null);
     const [animating, setAnimating] = useState(false);
     const [currentFrameIndex=0, setCurrentFrameIndex] = useState(0);
+    const isSwiping = useRef(false);
 
     useEffect(() => {
         let shouldswitch = true;
@@ -25,18 +26,25 @@ function App()
         function handleTouchStart(e) {
             // Сохранение начальной точки касания
             this.touchStartY = e.touches[0].clientY;
+            isSwiping.current = false;
+            console.log(isSwiping);
         }
 
+
+
         function handleTouchMove(e) {
+            console.log(isSwiping.current)
+            if (isSwiping.current) {
+                // Если уже был свайп, не выполняем никаких действий
+                return;
+            }
             // Вычисление направления свайпа
             const touchEndY = e.changedTouches[0].clientY;
             const yDiff = this.touchStartY - touchEndY;
-                if (yDiff > 25)
-                    /* свайп вверх */
-                    handleScroll('up');
-                if (yDiff < -25)
-                    /* свайп вниз */
-                    handleScroll('down');
+            if (yDiff > 25 || yDiff < -25){
+                handleScroll(yDiff > 0 ? 'up' : 'down');
+                isSwiping.current = true ;
+            }
         }
 
         function scrollwheel(e){
