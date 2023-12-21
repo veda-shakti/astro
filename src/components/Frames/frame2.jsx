@@ -41,9 +41,9 @@ export const Frame2 = () => {
                         tag="button"
                         onClick={() => setShowModal(true)}
                         translations={{
-                            en: 'Приборести запись',
-                            ru: 'Приборести запись',
-                            uk: 'Приборести запись',
+                            en: 'Приобрести запись',
+                            ru: 'Приобрести запись',
+                            uk: 'Приобрести запись',
                         }}
                         className="reg"
                     />}

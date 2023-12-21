@@ -22,7 +22,7 @@ const ContentLastBlock = (props) => {
                             Дата проведения: 02.12.2023<br/>
                             Размер вознаграждения: 6000 грн*
                         </p>
-                        <button onClick={() => setShowModal(true)} className="lastblock_reg">Зарегистрироваться</button>
+                        <button onClick={() => setShowModal(true)} className="lastblock_reg">Приобрести запись</button>
                         <p className="lastblock_ps">
                             *При оплате с других стран -  конвертация валюты проходит  автоматически по актуальному курсу НБУ <br/>
                             **При возникновении трудностей с оплатой обращайтесь на почту <a href='mailto:anastasiyashakti@gmail.com'>anastasiyashakti@gmail.com</a>

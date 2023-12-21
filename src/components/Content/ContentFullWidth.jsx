@@ -71,7 +71,7 @@ const ContentFullWidth = (props) => {
                             <h5 className="frame8_block_row3_block_h5">более 2000</h5>
                             <p className="frame8_block_row3_block_p">консультаций</p>
                         </div>
-                        <button onClick={() => setShowModal(true)} className="reg">Зарегистрироваться</button>
+                        <button onClick={() => setShowModal(true)} className="reg">Приобрести запись</button>
                     </div>
                 </div>
             </div>
