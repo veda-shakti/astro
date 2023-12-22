@@ -19,7 +19,6 @@ const ContentLastBlock = (props) => {
                             «Астропрогноз на 2024 год»!
                         </h2>
                         <p className="lastblock_p">
-                            Дата проведения: 02.12.2023<br/>
                             Размер вознаграждения: 6000 грн*
                         </p>
                         <button onClick={() => setShowModal(true)} className="lastblock_reg">Приобрести запись</button>

@@ -15,7 +15,7 @@ export const Frame2 = () => {
                 <ContentIntroPhone
                     contentid="2"
                     imgSrc={emblem}
-                    time="02.12.2023"
+                    time=""
                     title={<AdaptiveTag
                         tag="h1"
                         translations={{
