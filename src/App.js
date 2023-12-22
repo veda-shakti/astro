@@ -35,7 +35,6 @@ function App()
         function handleTouchMove(e) {
             console.log(isSwiping.current)
             if (isSwiping.current) {
-                // Если уже был свайп, не выполняем никаких действий
                 return;
             }
             // Вычисление направления свайпа
