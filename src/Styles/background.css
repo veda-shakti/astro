@@ -114,6 +114,7 @@ footer a {
     cursor: pointer;
     -webkit-box-shadow: rgba(241, 236, 229, 0.3960784314) 0px 0px 10px 0px;
     box-shadow: rgba(241, 236, 229, 0.3960784314) 0px 0px 10px 0px;
+    scale: 1.1;
 }
 
 @media (min-width: 560px) and (max-width: 969px) {
