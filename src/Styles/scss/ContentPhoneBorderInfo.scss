@@ -21,6 +21,10 @@
       margin: 0;
       margin-top: 56px;
       margin-bottom: 50px;
+      background: linear-gradient(222deg, #CA8341 4.27%, #FBD77D 48.6%, #FFECBE 72.39%, #FBD77D 103.75%, #CA8341 146.99%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .frame5_block_list {
       display: flex;

@@ -26,6 +26,10 @@
         font-style: normal;
         font-weight: 700;
         line-height: 110%; /* 44px */
+        background: linear-gradient(222deg, #CA8341 4.27%, #FBD77D 48.6%, #FFECBE 72.39%, #FBD77D 103.75%, #CA8341 146.99%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
       .frame3_block_h2 {
         font-family: 'Futura PT', sans-serif;
@@ -35,6 +39,10 @@
         line-height: 70.4px;
         position: relative;
         margin: 0 0 20px 0 ;
+        background: linear-gradient(222deg, #CA8341 4.27%, #FBD77D 48.6%, #FFECBE 72.39%, #FBD77D 103.75%, #CA8341 146.99%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       .frame3_block_p {
@@ -62,6 +70,10 @@
         height:58px;
         position: relative;
         margin: 0;
+        background: linear-gradient(222deg, #CA8341 4.27%, #FBD77D 48.6%, #FFECBE 72.39%, #FBD77D 103.75%, #CA8341 146.99%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
   }
 }

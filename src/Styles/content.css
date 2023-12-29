@@ -41,7 +41,7 @@
     text-align: center;
     font-size: 24px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 110%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -60,7 +60,7 @@
     /* width: ; */
     position: relative;
     width: 940px;
-    height: 326px;
+    height: 270px;
 }
 .content.introphone .frame2_block * {
     position: absolute;
@@ -91,6 +91,10 @@
     left: 258px;
     top: 35px;
     margin: 0;
+    background: linear-gradient(222deg, #CA8341 4.27%, #FBD77D 48.6%, #FFECBE 72.39%, #FBD77D 103.75%, #CA8341 146.99%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .content.introphone .frame2_block .frame2_block_p {
     font-family: "Futura PT", sans-serif;
@@ -108,7 +112,7 @@
     display: -ms-flexbox;
     display: flex;
     left: 258px;
-    top: 255px;
+    top: 207px;
     width: 465px;
     height: 55px;
     -webkit-box-pack: justify;
