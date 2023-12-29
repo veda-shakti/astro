@@ -91,6 +91,10 @@
         line-height: 110%; /* 44px */
         margin: 0;
         margin-bottom: 5px;
+        background: linear-gradient(222deg, #CA8341 4.27%, #FBD77D 48.6%, #FFECBE 72.39%, #FBD77D 103.75%, #CA8341 146.99%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
       .vebinar_block_description{
         font-size: 24px;
